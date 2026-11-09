@@ -1,32 +1,32 @@
 {
- "comprobado": "2026-11-09T23:59:25+01:00",
+ "comprobado": "2026-11-10T00:14:24+01:00",
  "fuente": "infra/estado/comprobar-estados.py",
  "servicios": {
   "data-school": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 228,
+   "latencia_ms": 69,
    "url": "https://erdeivih.github.io/data-school-site/",
    "nombre": "Data School"
   },
   "entrenolab-club": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 227,
+   "latencia_ms": 71,
    "url": "https://erdeivih.github.io/CDMPLab/",
    "nombre": "EntrenoLab Club"
   },
   "entrenolab-comercial": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 212,
+   "latencia_ms": 83,
    "url": "https://erdeivih.github.io/entrenolab-demo/",
    "nombre": "EntrenoLab Comercial"
   },
   "panel": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 352,
+   "latencia_ms": 214,
    "url": "https://erdeivih.github.io/panel/",
    "nombre": "Panel"
   }
