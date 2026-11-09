@@ -41,13 +41,6 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0;letter-spacing:-.03e
   justify-content:center;gap:6px;background:repeating-linear-gradient(135deg,#111a24 0 14px,#0d151d 14px 28px)}
 .sin-captura span{font-size:40px;font-weight:800;letter-spacing:-.04em;color:#ffffff1f}
 .sin-captura small{color:var(--suave);font-size:12px}
-.pille{display:inline-flex;align-items:center;gap:6px;flex:none;
-  font-size:11.5px;font-weight:650;padding:4px 9px;border-radius:999px;
-  background:#0a0f15;border:1px solid var(--borde);color:var(--texto)}
-.pille::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--suave)}
-.pille.estado-arriba::before{background:var(--verde)}
-.pille.estado-caido::before{background:var(--rojo)}
-.pille.estado-sin-probar::before,.pille.estado-sin-url::before{background:var(--suave)}
 .cuerpo{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
 .meta{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .categoria{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--suave)}
@@ -55,11 +48,18 @@ h2{font-size:18px;margin:0;line-height:1.25}
 .desc{color:var(--suave);font-size:13.5px;margin:0}
 .pie{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px}
 .detalle{font-size:11.5px;color:var(--suave)}
+.pille{display:inline-flex;align-items:center;gap:6px;flex:none;
+  font-size:11.5px;font-weight:650;padding:4px 9px;border-radius:999px;
+  background:#0a0f15;border:1px solid var(--borde);color:var(--texto)}
+.pille::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--suave)}
+.pille.estado-casa::before{background:var(--ambar)}
+.pille.estado-privado::before{background:var(--violeta)}
+.pille.estado-sin-url::before{background:var(--suave)}
+.sello{display:block;height:20px;width:auto}
 .abrir{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid #2b6b4d;
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
 footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid var(--borde);padding-top:16px}
-.vacio{padding:60px;text-align:center;color:var(--suave);grid-column:1/-1}
 @media (max-width:520px){.envuelto{padding:20px 14px 50px}.actualizado{font-size:12px}}
 </style>
 </head>
@@ -70,10 +70,10 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
       <h1>Proyectos de David</h1>
       <p class="sub">Un solo sitio para entrar a todo lo que hay en marcha. Cada tarjeta cuenta qué es, cómo está y cómo entrar. Lo que vive en casa se abre por la LAN o Tailscale; lo demás, desde cualquier sitio.</p>
     </div>
-    <div class="actualizado" id="actualizado">Estado comprobado: 09/11/2026 20:22</div>
+    <div class="actualizado">Estado externo por shields.io · sin proceso local</div>
   </header>
 
-  <div class="resumen" id="resumen"><span class="contador"><b>17</b>proyectos</span><span class="contador"><b>6</b>arriba</span><span class="contador"><b>0</b>caídos</span><span class="contador"><b>0</b>sin comprobar</span><span class="contador"><b>11</b>sin URL</span></div>
+  <div class="resumen" id="resumen"><span class="contador"><b>17</b>proyectos</span><span class="contador"><b>1</b>con estado externo</span><span class="contador"><b>7</b>en tu red</span><span class="contador"><b>1</b>privados</span><span class="contador"><b>8</b>sin URL</span></div>
 
   <nav class="filtros" id="filtros" aria-label="Filtrar por categoría">
     <button class="filtro" data-cat="Todas" aria-pressed="true">Todas <span>17</span></button>
@@ -93,12 +93,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · En el PC</span>
-            <span class="pille estado-arriba">Arriba</span>
+            <span class="pille estado-casa">En el PC</span>
           </div>
           <h2>Cesta</h2>
           <p class="desc">Superapp de compra: compara precios, recetas y calorías.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"> · 492 ms</span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir" href="http://127.0.0.1:8080" target="_blank" rel="noopener">Abrir en el PC</a>
           </div>
         </div>
@@ -115,7 +115,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>CueDigital</h2>
           <p class="desc">Cuaderno de campo y gestión de la explotación agrícola.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"></span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir secundario" href="https://github.com/ErDeivih/CueDigital" target="_blank" rel="noopener">Ver repo</a>
           </div>
         </div>
@@ -127,12 +127,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · Internet</span>
-            <span class="pille estado-arriba">Arriba</span>
+            <img class="sello" src="https://img.shields.io/website?url=https%3A%2F%2Ferdeivih.github.io%2FCDMPLab%2F&amp;label=estado&amp;up_message=arriba&amp;down_message=caido&amp;style=flat-square" alt="Estado de EntrenoLab: lo comprueba un servicio externo" loading="lazy">
           </div>
           <h2>EntrenoLab</h2>
           <p class="desc">Gestión de clubes deportivos, entrenamientos y ejercicios.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"> · 863 ms</span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir la demo</a>
           </div>
         </div>
@@ -144,12 +144,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · Tailscale</span>
-            <span class="pille estado-arriba">Arriba</span>
+            <span class="pille estado-casa">Tailscale</span>
           </div>
           <h2>FACYLF</h2>
           <p class="desc">Fútbol federado de Castilla y León: resultados, clasificaciones y actas.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"> · 1825 ms</span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir" href="http://100.117.58.93:3100" target="_blank" rel="noopener">Abrir por Tailscale</a>
           </div>
         </div>
@@ -166,7 +166,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>Chollos</h2>
           <p class="desc">Buscador de segunda mano que valora cada oferta y avisa si es chollo.</p>
           <div class="pie">
-            <span class="detalle">en espera<span class="latencia"></span></span>
+            <span class="detalle">en espera</span>
             <a class="abrir secundario" href="https://github.com/ErDeivih/chollos" target="_blank" rel="noopener">Ver repo</a>
           </div>
         </div>
@@ -178,12 +178,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · En casa</span>
-            <span class="pille estado-arriba">Arriba</span>
+            <span class="pille estado-casa">En casa</span>
           </div>
           <h2>Empleo</h2>
           <p class="desc">Vigía de convocatorias y bolsas de informática con plazo abierto.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"> · 1150 ms</span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir" href="http://192.168.1.139:8085/empleo" target="_blank" rel="noopener">Abrir en casa</a>
           </div>
         </div>
@@ -195,12 +195,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · Tailscale</span>
-            <span class="pille estado-arriba">Arriba</span>
+            <span class="pille estado-casa">Tailscale</span>
           </div>
           <h2>Lyfta (Garmin)</h2>
           <p class="desc">Entreno, reloj y análisis de sueño, HRV y carga.</p>
           <div class="pie">
-            <span class="detalle">desplegado<span class="latencia"> · 1157 ms</span></span>
+            <span class="detalle">desplegado</span>
             <a class="abrir" href="http://100.117.58.93:8010" target="_blank" rel="noopener">Abrir por Tailscale</a>
           </div>
         </div>
@@ -212,12 +212,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · Privado</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="pille estado-privado">Privado</span>
           </div>
           <h2>Genealogía</h2>
           <p class="desc">Árbol familiar con fuentes documentales y privacidad de vivos.</p>
           <div class="pie">
-            <span class="detalle">en espera<span class="latencia"></span></span>
+            <span class="detalle">en espera</span>
             <a class="abrir secundario" href="https://github.com/ErDeivih/genealogia" target="_blank" rel="noopener">Ver repo</a>
           </div>
         </div>
@@ -229,12 +229,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · Idea</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="pille estado-sin-url">Idea</span>
           </div>
           <h2>Impresión 3D</h2>
           <p class="desc">Idea de negocio de impresión 3D, todavía sin ficha.</p>
           <div class="pie">
-            <span class="detalle">sin ficha<span class="latencia"></span></span>
+            <span class="detalle">sin ficha</span>
             <span class="abrir secundario">Sin URL todavía</span>
           </div>
         </div>
@@ -251,7 +251,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>Asignaturas</h2>
           <p class="desc">Apuntes y trabajos del máster: Bioinformática, CAP y Criptografía.</p>
           <div class="pie">
-            <span class="detalle">en espera<span class="latencia"></span></span>
+            <span class="detalle">en espera</span>
             <a class="abrir secundario" href="https://github.com/ErDeivih/asignaturas" target="_blank" rel="noopener">Ver repo</a>
           </div>
         </div>
@@ -268,7 +268,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>OpoFuente</h2>
           <p class="desc">Temario común de oposiciones de informática C1 para estudiar.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"></span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir secundario" href="https://github.com/ErDeivih/opofuente" target="_blank" rel="noopener">Ver repo</a>
           </div>
         </div>
@@ -285,7 +285,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>TFM</h2>
           <p class="desc">Trabajo de fin de máster: memoria, pruebas y anexos.</p>
           <div class="pie">
-            <span class="detalle">en espera<span class="latencia"></span></span>
+            <span class="detalle">en espera</span>
             <span class="abrir secundario">Sin URL todavía</span>
           </div>
         </div>
@@ -302,7 +302,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>Data School</h2>
           <p class="desc">Portal de contenido de datos e IA con paquetes descargables.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"></span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir secundario" href="https://github.com/ErDeivih/data-school" target="_blank" rel="noopener">Ver repo</a>
           </div>
         </div>
@@ -314,12 +314,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Herramienta · Local</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="pille estado-casa">En local</span>
           </div>
           <h2>Inforepositorios</h2>
           <p class="desc">Catálogo de repositorios con RAG neuronal y guardados.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"></span></span>
+            <span class="detalle">en curso</span>
             <span class="abrir secundario">Sin URL todavía</span>
           </div>
         </div>
@@ -331,12 +331,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Herramienta · Local</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="pille estado-casa">En local</span>
           </div>
           <h2>REA</h2>
           <p class="desc">Sandbox de ingeniería inversa con REA y Ghidra.</p>
           <div class="pie">
-            <span class="detalle">sin ficha<span class="latencia"></span></span>
+            <span class="detalle">sin ficha</span>
             <span class="abrir secundario">Sin URL todavía</span>
           </div>
         </div>
@@ -348,12 +348,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Infraestructura · En casa</span>
-            <span class="pille estado-arriba">Arriba</span>
+            <span class="pille estado-casa">En casa</span>
           </div>
           <h2>Servidor</h2>
           <p class="desc">Infraestructura, servicios y despliegue de todos los proyectos.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"> · 1175 ms</span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir" href="http://192.168.1.139:8098" target="_blank" rel="noopener">Abrir en casa</a>
           </div>
         </div>
@@ -370,7 +370,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>Homelab</h2>
           <p class="desc">Laboratorio de casa: virtualización, servicios y agentes autónomos.</p>
           <div class="pie">
-            <span class="detalle">en curso<span class="latencia"></span></span>
+            <span class="detalle">en curso</span>
             <a class="abrir secundario" href="https://github.com/ErDeivih/homelab" target="_blank" rel="noopener">Ver repo</a>
           </div>
         </div>
@@ -379,7 +379,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
 
   <footer>
     <p><strong>Proyectos de David</strong> · 17 proyectos · sin cookies, sin analítica, sin GitHub Actions.</p>
-    <p>Estado calculado por <code>infra/estado/actualizar-estado.py</code> y publicado como <code>status.json</code>; generado por <code>panel-apps/generar.py</code>.</p>
+    <p>Las apps públicas con URL muestran un sello de <code>shields.io</code> (comprobación externa). Las de casa, Tailscale y privadas se etiquetan y no se comprueban desde fuera. Página generada por <code>panel-apps/generar.py</code>.</p>
   </footer>
 </div>
 <script>
@@ -395,34 +395,6 @@ botones.forEach(function (b) {
     });
   });
 });
-
-// Si la página se sirve por HTTP (GitHub Pages), refresca el estado desde status.json.
-// Abierta con doble clic (file://) el fetch falla en silencio y queda la foto incrustada.
-async function refrescarEstado() {
-  try {
-    const r = await fetch("status.json", { cache: "no-cache" });
-    if (!r.ok) return;
-    const st = await r.json();
-    const apps = st.apps || {};
-    Object.keys(apps).forEach(function (id) {
-      const tarjeta = document.querySelector('.tarjeta[data-id="' + id + '"]');
-      if (!tarjeta) return;
-      const pille = tarjeta.querySelector(".pille");
-      if (!pille) return;
-      const e = apps[id].estado;
-      pille.className = "pille estado-" + e;
-      pille.textContent = e === "arriba" ? "Arriba" : (e === "caido" ? "Caído" : "Sin comprobar");
-      const lat = tarjeta.querySelector(".latencia");
-      if (lat && apps[id].latencia_ms != null) lat.textContent = apps[id].latencia_ms + " ms";
-    });
-    const etiqueta = document.getElementById("actualizado");
-    if (etiqueta && st.actualizado) {
-      etiqueta.textContent = "Estado comprobado: " + new Date(st.actualizado).toLocaleString("es-ES");
-    }
-  } catch (e) { /* doble clic: se usa la foto incrustada */ }
-}
-// Con doble clic (file://) no se hace fetch: usa la foto incrustada y no ensucia la consola.
-if (location.protocol !== "file:") refrescarEstado();
 </script>
 </body>
 </html>
