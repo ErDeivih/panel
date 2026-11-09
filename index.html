@@ -421,7 +421,8 @@ async function refrescarEstado() {
     }
   } catch (e) { /* doble clic: se usa la foto incrustada */ }
 }
-refrescarEstado();
+// Con doble clic (file://) no se hace fetch: usa la foto incrustada y no ensucia la consola.
+if (location.protocol !== "file:") refrescarEstado();
 </script>
 </body>
 </html>
