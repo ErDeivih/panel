@@ -1,41 +1,41 @@
 {
- "actualizado": "2026-11-09T18:51:30+01:00",
+ "actualizado": "2026-11-09T18:52:40+01:00",
  "fuente": "local",
  "apps": {
   "cesta": {
    "estado": "arriba",
    "http": 200,
-   "latencia_ms": 5042,
+   "latencia_ms": 1694,
    "url": "http://127.0.0.1:8080/"
   },
   "empleo": {
    "estado": "arriba",
    "http": 200,
-   "latencia_ms": 4379,
+   "latencia_ms": 811,
    "url": "http://192.168.1.139:8085/empleo"
   },
   "entrenolab": {
    "estado": "arriba",
    "http": 200,
-   "latencia_ms": 4549,
+   "latencia_ms": 1728,
    "url": "https://erdeivih.github.io/CDMPLab/"
   },
   "facylf": {
    "estado": "arriba",
    "http": 200,
-   "latencia_ms": 5699,
+   "latencia_ms": 1616,
    "url": "http://100.117.58.93:3100/"
   },
   "garmin": {
    "estado": "arriba",
    "http": 200,
-   "latencia_ms": 3068,
+   "latencia_ms": 876,
    "url": "http://100.117.58.93:8010/healthz"
   },
   "servidor": {
    "estado": "arriba",
    "http": 200,
-   "latencia_ms": 4745,
+   "latencia_ms": 168,
    "url": "http://192.168.1.139:8098/"
   }
  }
