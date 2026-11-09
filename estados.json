@@ -1,0 +1,20 @@
+{
+ "comprobado": "2026-11-09T22:08:38+01:00",
+ "fuente": "infra/estado/comprobar-estados.py",
+ "servicios": {
+  "entrenolab-club": {
+   "estado": "disponible",
+   "http": 200,
+   "latencia_ms": 225,
+   "url": "https://erdeivih.github.io/CDMPLab/",
+   "nombre": "EntrenoLab Club"
+  },
+  "panel": {
+   "estado": "disponible",
+   "http": 200,
+   "latencia_ms": 177,
+   "url": "https://erdeivih.github.io/panel/",
+   "nombre": "Panel"
+  }
+ }
+}

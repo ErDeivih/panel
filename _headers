@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'none'; img-src 'self' data: https://img.shields.io; script-src 'sha256-JAHD5biGvvzWNA6Ssj4nWWN4iyXgm0H7IY2JdJBk7oM='; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; img-src 'self' data:; script-src 'sha256-JAHD5biGvvzWNA6Ssj4nWWN4iyXgm0H7IY2JdJBk7oM='; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
