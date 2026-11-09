@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://img.shields.io; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <title>Proyectos de David</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0f15'/%3E%3Ctext x='32' y='42' font-family='system-ui' font-size='26' font-weight='700' text-anchor='middle' fill='%233ddc97'%3EPD%3C/text%3E%3C/svg%3E">
 <style>
@@ -43,20 +45,22 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0;letter-spacing:-.03e
 .sin-captura span{font-size:40px;font-weight:800;letter-spacing:-.04em;color:#ffffff1f}
 .sin-captura small{color:var(--suave);font-size:12px}
 .cuerpo{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
-.meta{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .categoria{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--suave)}
 h2{font-size:18px;margin:0;line-height:1.25}
 .desc{color:var(--suave);font-size:13.5px;margin:0}
-.pie{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px}
-.detalle{font-size:11.5px;color:var(--suave)}
+.pie{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;flex-wrap:wrap}
+.detalle{font-size:11.5px;color:var(--suave);display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sello-estado{display:block;height:20px;width:auto}
 .pille{display:inline-flex;align-items:center;gap:6px;flex:none;
-  font-size:11.5px;font-weight:650;padding:4px 9px;border-radius:999px;
-  background:#0a0f15;border:1px solid var(--borde);color:var(--texto)}
-.pille::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--suave)}
-.pille.estado-casa::before{background:var(--ambar)}
-.pille.estado-privado::before{background:var(--violeta)}
-.pille.estado-sin-url::before{background:var(--suave)}
-.sello{display:block;height:20px;width:auto}
+  font-size:11px;font-weight:650;padding:4px 9px;border-radius:999px;
+  background:#0a0f15;border:1px solid var(--borde);color:var(--texto);white-space:nowrap}
+.pille::before{content:"";width:8px;height:8px;border-radius:50%}
+.pille.acceso-publico{border-color:#2b6b4d;color:#c9ffe9}
+.pille.acceso-publico::before{background:var(--verde)}
+.pille.acceso-casa::before{background:var(--ambar)}
+.pille.acceso-privado::before{background:var(--violeta)}
+.pille.acceso-demo::before{background:var(--azul)}
 .abrir{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid #2b6b4d;
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
@@ -69,24 +73,92 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
   <header>
     <div>
       <h1>Proyectos de David</h1>
-      <p class="sub">Un solo sitio para entrar a todo lo que hay en marcha. Cada tarjeta cuenta qué es, cómo está y cómo entrar. Lo que vive en casa se abre por la LAN o Tailscale; lo demás, desde cualquier sitio.</p>
+      <p class="sub">Un solo sitio para entrar a todo lo que hay en marcha. Solo se enlaza lo que se puede abrir desde cualquier sitio; el resto indica dónde vive y no se inventa un estado.</p>
     </div>
-    <div class="actualizado">Estado externo por shields.io · sin proceso local</div>
+    <div class="actualizado">Versión pública · sin IPs, puertos ni rutas locales</div>
   </header>
 
-  <div class="resumen" id="resumen"><span class="contador"><b>17</b>proyectos</span><span class="contador"><b>1</b>con estado externo</span><span class="contador"><b>7</b>en tu red</span><span class="contador"><b>1</b>privados</span><span class="contador"><b>8</b>sin URL</span></div>
+  <div class="resumen" id="resumen"><span class="contador"><b>16</b>proyectos</span><span class="contador"><b>1</b>abiertos</span><span class="contador"><b>7</b>en casa</span><span class="contador"><b>4</b>privados</span><span class="contador"><b>4</b>demo pendiente</span></div>
 
   <nav class="filtros" id="filtros" aria-label="Filtrar por categoría">
-    <button class="filtro" data-cat="Todas" aria-pressed="true">Todas <span>17</span></button>
-    <button class="filtro" data-cat="Producto" aria-pressed="false">Producto <span>4</span></button>
-    <button class="filtro" data-cat="Personal" aria-pressed="false">Personal <span>5</span></button>
-    <button class="filtro" data-cat="Estudio" aria-pressed="false">Estudio <span>3</span></button>
+    <button class="filtro" data-cat="Todas" aria-pressed="true">Todas <span>16</span></button>
+    <button class="filtro" data-cat="Producto" aria-pressed="false">Producto <span>6</span></button>
+    <button class="filtro" data-cat="Personal" aria-pressed="false">Personal <span>4</span></button>
+    <button class="filtro" data-cat="Estudio" aria-pressed="false">Estudio <span>2</span></button>
     <button class="filtro" data-cat="Contenido" aria-pressed="false">Contenido <span>1</span></button>
-    <button class="filtro" data-cat="Herramienta" aria-pressed="false">Herramienta <span>2</span></button>
+    <button class="filtro" data-cat="Herramienta" aria-pressed="false">Herramienta <span>1</span></button>
     <button class="filtro" data-cat="Infraestructura" aria-pressed="false">Infraestructura <span>2</span></button>
   </nav>
 
   <main class="rejilla" id="rejilla">
+      <article class="tarjeta" data-id="impresion3d" data-categoria="Producto">
+        <div class="cap">
+          <img src="capturas/proyectos/impresion3d.png" alt="Captura de Impresión 3D (escudos)" loading="lazy">
+        </div>
+        <div class="cuerpo">
+          <div class="meta">
+            <span class="categoria">Producto · Sin publicar</span>
+            <span class="pille acceso-demo">Demo no disponible</span>
+          </div>
+          <h2>Impresión 3D (escudos)</h2>
+          <p class="desc">Escudos heráldicos 3D: configurador con precio al instante y prototipo impreso.</p>
+          <div class="pie">
+            <span class="detalle">prototipo</span>
+            
+          </div>
+        </div>
+      </article>
+      <article class="tarjeta" data-id="entrenolab-club" data-categoria="Producto">
+        <div class="cap">
+          <img src="capturas/proyectos/entrenolab-club.png" alt="Captura de EntrenoLab Club" loading="lazy">
+        </div>
+        <div class="cuerpo">
+          <div class="meta">
+            <span class="categoria">Producto · Internet</span>
+            <span class="pille acceso-publico">Abre desde cualquier sitio</span>
+          </div>
+          <h2>EntrenoLab Club</h2>
+          <p class="desc">Pizarra táctica y gestión del club que ya usa su equipo.</p>
+          <div class="pie">
+            <span class="detalle">en curso<img class="sello-estado" src="https://img.shields.io/website?url=https%3A%2F%2Ferdeivih.github.io%2FCDMPLab%2F&amp;label=estado&amp;up_message=arriba&amp;down_message=caido&amp;style=flat-square" alt="Estado de EntrenoLab Club: lo comprueba un servicio externo" loading="lazy"></span>
+            <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir la app</a>
+          </div>
+        </div>
+      </article>
+      <article class="tarjeta" data-id="entrenolab-comercial" data-categoria="Producto">
+        <div class="cap">
+          <img src="capturas/proyectos/entrenolab-comercial.png" alt="Captura de EntrenoLab Comercial" loading="lazy">
+        </div>
+        <div class="cuerpo">
+          <div class="meta">
+            <span class="categoria">Producto · Sin publicar</span>
+            <span class="pille acceso-demo">Demo no disponible</span>
+          </div>
+          <h2>EntrenoLab Comercial</h2>
+          <p class="desc">Gestión de clubes y entrenamientos para fútbol base, en preparación.</p>
+          <div class="pie">
+            <span class="detalle">en curso</span>
+            
+          </div>
+        </div>
+      </article>
+      <article class="tarjeta" data-id="fondo-popular" data-categoria="Producto">
+        <div class="cap">
+          <img src="capturas/proyectos/fondo-popular.png" alt="Captura de Fondo Popular" loading="lazy">
+        </div>
+        <div class="cuerpo">
+          <div class="meta">
+            <span class="categoria">Producto · Tailscale</span>
+            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+          </div>
+          <h2>Fondo Popular</h2>
+          <p class="desc">Fútbol federado de Castilla y León: resultados, clasificaciones y actas.</p>
+          <div class="pie">
+            <span class="detalle">en curso</span>
+            
+          </div>
+        </div>
+      </article>
       <article class="tarjeta" data-id="cesta" data-categoria="Producto">
         <div class="cap">
           <img src="capturas/proyectos/cesta.png" alt="Captura de Cesta" loading="lazy">
@@ -94,13 +166,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · En el PC</span>
-            <span class="pille estado-casa">En el PC</span>
+            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
           </div>
           <h2>Cesta</h2>
           <p class="desc">Superapp de compra: compara precios, recetas y calorías.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="http://127.0.0.1:8080" target="_blank" rel="noopener">Abrir en el PC</a>
+            
           </div>
         </div>
       </article>
@@ -110,48 +182,14 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         </div>
         <div class="cuerpo">
           <div class="meta">
-            <span class="categoria">Producto · Sin publicar</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="categoria">Producto · Privado</span>
+            <span class="pille acceso-privado">Privado</span>
           </div>
           <h2>CueDigital</h2>
           <p class="desc">Cuaderno de campo y gestión de la explotación agrícola.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir secundario" href="https://github.com/ErDeivih/CueDigital" target="_blank" rel="noopener">Ver repo</a>
-          </div>
-        </div>
-      </article>
-      <article class="tarjeta" data-id="entrenolab" data-categoria="Producto">
-        <div class="cap">
-          <img src="capturas/proyectos/entrenolab.png" alt="Captura de EntrenoLab" loading="lazy">
-        </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Producto · Internet</span>
-            <img class="sello" src="https://img.shields.io/website?url=https%3A%2F%2Ferdeivih.github.io%2FCDMPLab%2F&amp;label=estado&amp;up_message=arriba&amp;down_message=caido&amp;style=flat-square" alt="Estado de EntrenoLab: lo comprueba un servicio externo" loading="lazy">
-          </div>
-          <h2>EntrenoLab</h2>
-          <p class="desc">Gestión de clubes deportivos, entrenamientos y ejercicios.</p>
-          <div class="pie">
-            <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir la demo</a>
-          </div>
-        </div>
-      </article>
-      <article class="tarjeta" data-id="facylf" data-categoria="Producto">
-        <div class="cap">
-          <img src="capturas/proyectos/facylf.png" alt="Captura de FACYLF" loading="lazy">
-        </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Producto · Tailscale</span>
-            <span class="pille estado-casa">Tailscale</span>
-          </div>
-          <h2>FACYLF</h2>
-          <p class="desc">Fútbol federado de Castilla y León: resultados, clasificaciones y actas.</p>
-          <div class="pie">
-            <span class="detalle">en curso</span>
-            <a class="abrir" href="http://100.117.58.93:3100" target="_blank" rel="noopener">Abrir por Tailscale</a>
+            
           </div>
         </div>
       </article>
@@ -161,14 +199,14 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         </div>
         <div class="cuerpo">
           <div class="meta">
-            <span class="categoria">Personal · Sin publicar</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="categoria">Personal · En casa</span>
+            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
           </div>
           <h2>Chollos</h2>
           <p class="desc">Buscador de segunda mano que valora cada oferta y avisa si es chollo.</p>
           <div class="pie">
             <span class="detalle">en espera</span>
-            <a class="abrir secundario" href="https://github.com/ErDeivih/chollos" target="_blank" rel="noopener">Ver repo</a>
+            
           </div>
         </div>
       </article>
@@ -179,13 +217,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · En casa</span>
-            <span class="pille estado-casa">En casa</span>
+            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
           </div>
           <h2>Empleo</h2>
           <p class="desc">Vigía de convocatorias y bolsas de informática con plazo abierto.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="http://192.168.1.139:8085/empleo" target="_blank" rel="noopener">Abrir en casa</a>
+            
           </div>
         </div>
       </article>
@@ -196,13 +234,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · Tailscale</span>
-            <span class="pille estado-casa">Tailscale</span>
+            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
           </div>
           <h2>Lyfta (Garmin)</h2>
           <p class="desc">Entreno, reloj y análisis de sueño, HRV y carga.</p>
           <div class="pie">
             <span class="detalle">desplegado</span>
-            <a class="abrir" href="http://100.117.58.93:8010" target="_blank" rel="noopener">Abrir por Tailscale</a>
+            
           </div>
         </div>
       </article>
@@ -213,81 +251,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · Privado</span>
-            <span class="pille estado-privado">Privado</span>
+            <span class="pille acceso-privado">Privado</span>
           </div>
           <h2>Genealogía</h2>
           <p class="desc">Árbol familiar con fuentes documentales y privacidad de vivos.</p>
           <div class="pie">
             <span class="detalle">en espera</span>
-            <a class="abrir secundario" href="https://github.com/ErDeivih/genealogia" target="_blank" rel="noopener">Ver repo</a>
-          </div>
-        </div>
-      </article>
-      <article class="tarjeta" data-id="impresion3d" data-categoria="Personal">
-        <div class="cap">
-          <div class="sin-captura"><span>3D</span><small>Sin captura todavía</small></div>
-        </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Personal · Idea</span>
-            <span class="pille estado-sin-url">Idea</span>
-          </div>
-          <h2>Impresión 3D</h2>
-          <p class="desc">Idea de negocio de impresión 3D, todavía sin ficha.</p>
-          <div class="pie">
-            <span class="detalle">sin ficha</span>
-            <span class="abrir secundario">Sin URL todavía</span>
-          </div>
-        </div>
-      </article>
-      <article class="tarjeta" data-id="asignaturas" data-categoria="Estudio">
-        <div class="cap">
-          <div class="sin-captura"><span>AS</span><small>Sin captura todavía</small></div>
-        </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Estudio · Sin publicar</span>
-            <span class="pille estado-sin-url">Sin URL</span>
-          </div>
-          <h2>Asignaturas</h2>
-          <p class="desc">Apuntes y trabajos del máster: Bioinformática, CAP y Criptografía.</p>
-          <div class="pie">
-            <span class="detalle">en espera</span>
-            <a class="abrir secundario" href="https://github.com/ErDeivih/asignaturas" target="_blank" rel="noopener">Ver repo</a>
-          </div>
-        </div>
-      </article>
-      <article class="tarjeta" data-id="opofuente" data-categoria="Estudio">
-        <div class="cap">
-          <img src="capturas/proyectos/opofuente.png" alt="Captura de OpoFuente" loading="lazy">
-        </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Estudio · Sin publicar</span>
-            <span class="pille estado-sin-url">Sin URL</span>
-          </div>
-          <h2>OpoFuente</h2>
-          <p class="desc">Temario común de oposiciones de informática C1 para estudiar.</p>
-          <div class="pie">
-            <span class="detalle">en curso</span>
-            <a class="abrir secundario" href="https://github.com/ErDeivih/opofuente" target="_blank" rel="noopener">Ver repo</a>
-          </div>
-        </div>
-      </article>
-      <article class="tarjeta" data-id="tfm" data-categoria="Estudio">
-        <div class="cap">
-          <div class="sin-captura"><span>TF</span><small>Sin captura todavía</small></div>
-        </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Estudio · Sin publicar</span>
-            <span class="pille estado-sin-url">Sin URL</span>
-          </div>
-          <h2>TFM</h2>
-          <p class="desc">Trabajo de fin de máster: memoria, pruebas y anexos.</p>
-          <div class="pie">
-            <span class="detalle">en espera</span>
-            <span class="abrir secundario">Sin URL todavía</span>
+            
           </div>
         </div>
       </article>
@@ -298,13 +268,47 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Contenido · Sin publicar</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="pille acceso-demo">Demo no disponible</span>
           </div>
           <h2>Data School</h2>
           <p class="desc">Portal de contenido de datos e IA con paquetes descargables.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir secundario" href="https://github.com/ErDeivih/data-school" target="_blank" rel="noopener">Ver repo</a>
+            
+          </div>
+        </div>
+      </article>
+      <article class="tarjeta" data-id="opofuente" data-categoria="Estudio">
+        <div class="cap">
+          <img src="capturas/proyectos/opofuente.png" alt="Captura de OpoFuente" loading="lazy">
+        </div>
+        <div class="cuerpo">
+          <div class="meta">
+            <span class="categoria">Estudio · Sin publicar</span>
+            <span class="pille acceso-demo">Demo no disponible</span>
+          </div>
+          <h2>OpoFuente</h2>
+          <p class="desc">Temario común de oposiciones de informática C1 para estudiar.</p>
+          <div class="pie">
+            <span class="detalle">en curso</span>
+            
+          </div>
+        </div>
+      </article>
+      <article class="tarjeta" data-id="tfm" data-categoria="Estudio">
+        <div class="cap">
+          <div class="sin-captura"><span>TF</span><small>Sin captura todavía</small></div>
+        </div>
+        <div class="cuerpo">
+          <div class="meta">
+            <span class="categoria">Estudio · Privado</span>
+            <span class="pille acceso-privado">Privado</span>
+          </div>
+          <h2>TFM</h2>
+          <p class="desc">Trabajo de fin de máster: memoria, pruebas y anexos.</p>
+          <div class="pie">
+            <span class="detalle">en espera</span>
+            
           </div>
         </div>
       </article>
@@ -315,30 +319,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Herramienta · Local</span>
-            <span class="pille estado-casa">En local</span>
+            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
           </div>
           <h2>Inforepositorios</h2>
           <p class="desc">Catálogo de repositorios con RAG neuronal y guardados.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <span class="abrir secundario">Sin URL todavía</span>
-          </div>
-        </div>
-      </article>
-      <article class="tarjeta" data-id="rea" data-categoria="Herramienta">
-        <div class="cap">
-          <div class="sin-captura"><span>RE</span><small>Sin captura todavía</small></div>
-        </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Herramienta · Local</span>
-            <span class="pille estado-casa">En local</span>
-          </div>
-          <h2>REA</h2>
-          <p class="desc">Sandbox de ingeniería inversa con REA y Ghidra.</p>
-          <div class="pie">
-            <span class="detalle">sin ficha</span>
-            <span class="abrir secundario">Sin URL todavía</span>
+            
           </div>
         </div>
       </article>
@@ -349,13 +336,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Infraestructura · En casa</span>
-            <span class="pille estado-casa">En casa</span>
+            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
           </div>
           <h2>Servidor</h2>
           <p class="desc">Infraestructura, servicios y despliegue de todos los proyectos.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="http://192.168.1.139:8098" target="_blank" rel="noopener">Abrir en casa</a>
+            
           </div>
         </div>
       </article>
@@ -365,22 +352,22 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         </div>
         <div class="cuerpo">
           <div class="meta">
-            <span class="categoria">Infraestructura · Sin publicar</span>
-            <span class="pille estado-sin-url">Sin URL</span>
+            <span class="categoria">Infraestructura · Privado</span>
+            <span class="pille acceso-privado">Privado</span>
           </div>
           <h2>Homelab</h2>
           <p class="desc">Laboratorio de casa: virtualización, servicios y agentes autónomos.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir secundario" href="https://github.com/ErDeivih/homelab" target="_blank" rel="noopener">Ver repo</a>
+            
           </div>
         </div>
       </article>
   </main>
 
   <footer>
-    <p><strong>Proyectos de David</strong> · 17 proyectos · sin cookies, sin analítica, sin GitHub Actions.</p>
-    <p>Las apps públicas con URL muestran un sello de <code>shields.io</code> (comprobación externa). Las de casa, Tailscale y privadas se etiquetan y no se comprueban desde fuera. Página generada por <code>panel-apps/generar.py</code>.</p>
+    <p><strong>Proyectos de David</strong> · 16 proyectos · sin cookies, sin analítica, sin GitHub Actions.</p>
+    <p>Estado de lo público con <code>shields.io</code>; lo privado se etiqueta y no se comprueba desde fuera. Generado por <code>panel-apps/generar.py</code>.</p>
   </footer>
 </div>
 <script>
