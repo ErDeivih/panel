@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; script-src 'sha256-B675U21pOdzgEEnW+s7A3Od3JK4GTvwVWLzDxih4aZg='; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; script-src 'sha256-fD62jizsGevAlXSH12LfbcHHhPG7zHScxZUAiw4Y3Gc='; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Proyectos de David</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0f15'/%3E%3Ctext x='32' y='42' font-family='system-ui' font-size='26' font-weight='700' text-anchor='middle' fill='%233ddc97'%3EPD%3C/text%3E%3C/svg%3E">
@@ -31,7 +31,7 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0;letter-spacing:-.03e
 .contador b{color:var(--texto);font-size:18px;margin-right:6px}
 .filtros{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
 .filtro{cursor:pointer;border:1px solid var(--borde);background:var(--panel);color:var(--suave);
-  padding:8px 13px;border-radius:999px;font-size:13px}
+  padding:8px 13px;border-radius:999px;font-size:13px;min-height:44px;display:inline-flex;align-items:center}
 .filtro[aria-pressed="true"]{background:#16354a;color:#d6ecff;border-color:#2d6b91}
 .filtro span{color:var(--texto);margin-left:4px}
 .rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px}
@@ -70,7 +70,18 @@ h2{font-size:18px;margin:0;line-height:1.25}
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
 footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid var(--borde);padding-top:16px}
-@media (max-width:520px){.envuelto{padding:20px 14px 50px}.actualizado{font-size:12px}}
+@media (max-width:520px){
+  .envuelto{padding:18px 14px 50px}
+  .rejilla{gap:12px}
+  .cuerpo{order:1;padding:12px 14px 10px;gap:6px}
+  .cap{order:2;height:96px;aspect-ratio:auto}
+  .cap img{height:96px;object-fit:cover}
+  .desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .nota{font-size:11.5px;padding:6px 8px}
+  .pie{padding-top:8px}
+  .filtro{min-height:44px}
+  .actualizado{font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -81,14 +92,12 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
       <p class="sub">Un solo sitio para entrar a todo lo que hay en marcha. Las tarjetas solo enlazan URLs públicas; las de casa llevan su sello.</p>
       <p class="aviso-version">Versión pública · solo enlaces que abren desde cualquier sitio</p>
     </div>
-    <div class="actualizado">Última comprobación: 10/11/2026 14:29</div>
+    <div class="actualizado">Última comprobación: 10/11/2026 14:32</div>
   </header>
 
-  <div class="resumen" id="resumen"><span class="contador"><b>17</b>proyectos</span><span class="contador"><b>9</b>se abren ahora</span><span class="contador"><b>4</b>en casa</span><span class="contador"><b>3</b>privados</span><span class="contador"><b>8</b>sin enlace público</span></div>
-
   <nav class="filtros" id="filtros" aria-label="Filtrar">
-    <button class="filtro" data-filtro="Todas" aria-pressed="true">Todas <span>17</span></button>
-    <button class="filtro" data-filtro="abrible" aria-pressed="false">Puedo abrir ahora <span>9</span></button>
+    <button class="filtro" data-filtro="abrible" aria-pressed="true">Puedo abrir ahora <span>8</span></button>
+    <button class="filtro" data-filtro="Todas" aria-pressed="false">Todas <span>17</span></button>
     <button class="filtro" data-filtro="Producto" aria-pressed="false">Producto <span>5</span></button>
     <button class="filtro" data-filtro="Personal" aria-pressed="false">Personal <span>5</span></button>
     <button class="filtro" data-filtro="Estudio" aria-pressed="false">Estudio <span>3</span></button>
@@ -112,7 +121,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">prototipo</span>
-            <a class="abrir" href="https://erdeivih.github.io/impresion3d-demo/" target="_blank" rel="noopener">Abrir el configurador</a>
+            <a class="abrir" href="https://erdeivih.github.io/impresion3d-demo/" target="_blank" rel="noopener">Abrir Impresión 3D</a>
           </div>
         </div>
       </article>
@@ -130,25 +139,25 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <p class="nota">App del club: la pizarra táctica que ya usa el equipo. Demo comercial: gestión y entrenamientos de un club.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir app del club</a><a class="abrir secundario" href="https://erdeivih.github.io/entrenolab-demo/" target="_blank" rel="noopener">Abrir demo comercial</a>
+            <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir EntrenoLab (club)</a><a class="abrir secundario" href="https://erdeivih.github.io/entrenolab-demo/" target="_blank" rel="noopener">Abrir EntrenoLab (demo)</a>
           </div>
         </div>
       </article>
-      <article class="tarjeta" data-id="fondo-popular" data-categoria="Producto" data-abrible="1">
+      <article class="tarjeta" data-id="fondo-popular" data-categoria="Producto" data-abrible="0">
         <div class="cap">
           <img src="capturas/proyectos/fondo-popular.png" alt="Captura de Fondo Popular" loading="lazy">
         </div>
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille sello-casa">Solo en casa</span>
           </div>
           <h2>Fondo Popular</h2>
-          <p class="desc">Fútbol federado de Castilla y León: resultados, clasificaciones y actas.</p>
+          <p class="desc">Fútbol federado de Castilla y León; demo en reparación, se abre por Tailscale.</p>
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/fondo-popular-demo/" target="_blank" rel="noopener">Abrir la demo</a>
+            <span class="abrir secundario">Disponible en tu red</span>
           </div>
         </div>
       </article>
@@ -166,7 +175,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/data-school-site/" target="_blank" rel="noopener">Abrir el portal</a>
+            <a class="abrir" href="https://erdeivih.github.io/data-school-site/" target="_blank" rel="noopener">Abrir Data School</a>
           </div>
         </div>
       </article>
@@ -184,7 +193,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/opofuente-demo/" target="_blank" rel="noopener">Abrir la demo</a>
+            <a class="abrir" href="https://erdeivih.github.io/opofuente-demo/" target="_blank" rel="noopener">Abrir OpoFuente</a>
           </div>
         </div>
       </article>
@@ -202,7 +211,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en espera</span>
-            <a class="abrir" href="https://erdeivih.github.io/genealogia-demo/" target="_blank" rel="noopener">Ver el árbol</a>
+            <a class="abrir" href="https://erdeivih.github.io/genealogia-demo/" target="_blank" rel="noopener">Abrir Genealogía</a>
           </div>
         </div>
       </article>
@@ -220,7 +229,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/empleo-demo/" target="_blank" rel="noopener">Ver convocatorias</a>
+            <a class="abrir" href="https://erdeivih.github.io/empleo-demo/" target="_blank" rel="noopener">Abrir Empleo</a>
           </div>
         </div>
       </article>
@@ -238,7 +247,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">desplegado</span>
-            <a class="abrir" href="https://erdeivih.github.io/" target="_blank" rel="noopener">Abrir el portafolio</a>
+            <a class="abrir" href="https://erdeivih.github.io/" target="_blank" rel="noopener">Abrir Portafolio</a>
           </div>
         </div>
       </article>
@@ -256,7 +265,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Disponible en tu red</span>
           </div>
         </div>
       </article>
@@ -274,7 +283,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en espera</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Disponible en tu red</span>
           </div>
         </div>
       </article>
@@ -292,7 +301,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir la demo</a>
+            <a class="abrir" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir CueDigital</a>
           </div>
         </div>
       </article>
@@ -310,7 +319,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">desplegado</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Disponible en tu red</span>
           </div>
         </div>
       </article>
@@ -328,7 +337,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Disponible en tu red</span>
           </div>
         </div>
       </article>
@@ -346,7 +355,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Disponible en tu red</span>
           </div>
         </div>
       </article>
@@ -364,7 +373,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Acceso privado</span>
           </div>
         </div>
       </article>
@@ -382,7 +391,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en espera</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Acceso privado</span>
           </div>
         </div>
       </article>
@@ -400,7 +409,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           
           <div class="pie">
             <span class="detalle">en espera</span>
-            <span class="abrir secundario">Sin enlace todavía</span>
+            <span class="abrir secundario">Acceso privado</span>
           </div>
         </div>
       </article>
@@ -414,20 +423,22 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
 <script>
 const botones = document.querySelectorAll(".filtro");
 const tarjetas = Array.from(document.querySelectorAll(".tarjeta"));
-botones.forEach(function (b) {
-  b.addEventListener("click", function () {
-    botones.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
-    b.setAttribute("aria-pressed", "true");
-    const filtro = b.dataset.filtro;
-    tarjetas.forEach(function (t) {
-      let visible;
-      if (filtro === "Todas") visible = true;
-      else if (filtro === "abrible") visible = t.dataset.abrible === "1";
-      else visible = t.dataset.categoria === filtro;
-      t.style.display = visible ? "" : "none";
-    });
+function aplicar(filtro) {
+  botones.forEach(function (b) {
+    b.setAttribute("aria-pressed", b.dataset.filtro === filtro ? "true" : "false");
   });
+  tarjetas.forEach(function (t) {
+    let visible;
+    if (filtro === "Todas") visible = true;
+    else if (filtro === "abrible") visible = t.dataset.abrible === "1";
+    else visible = t.dataset.categoria === filtro;
+    t.style.display = visible ? "" : "none";
+  });
+}
+botones.forEach(function (b) {
+  b.addEventListener("click", function () { aplicar(b.dataset.filtro); });
 });
+aplicar("abrible");
 </script>
 </body>
 </html>
