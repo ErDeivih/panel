@@ -64,7 +64,7 @@ h2{font-size:18px;margin:0;line-height:1.25}
 .pille.estado-servicio-sin-comprobar::before{background:var(--suave)}
 .pille.acceso-casa::before{background:var(--ambar)}
 .pille.acceso-privado::before{background:var(--violeta)}
-.pille.acceso-demo::before{background:var(--azul)}
+.pille.acceso-preparacion::before,.pille.acceso-demo::before{background:var(--azul)}
 .abrir{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid #2b6b4d;
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
@@ -79,10 +79,10 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
       <h1>Proyectos de David</h1>
       <p class="sub">Un solo sitio para entrar a todo lo que hay en marcha. Solo se enlaza lo que se puede abrir desde cualquier sitio; el resto indica dónde vive.</p>
     </div>
-    <div class="actualizado" title="Versión pública · sin IPs, puertos ni rutas locales">Última comprobación: 10/11/2026 10:59</div>
+    <div class="actualizado" title="Versión pública · sin IPs, puertos ni rutas locales">Última comprobación: 10/11/2026 11:09</div>
   </header>
 
-  <div class="resumen" id="resumen"><span class="contador"><b>17</b>proyectos</span><span class="contador"><b>3</b>abiertos</span><span class="contador"><b>7</b>en casa</span><span class="contador"><b>5</b>privados</span><span class="contador"><b>2</b>demo pendiente</span></div>
+  <div class="resumen" id="resumen"><span class="contador"><b>17</b>proyectos</span><span class="contador"><b>8</b>abiertos</span><span class="contador"><b>5</b>en casa</span><span class="contador"><b>3</b>privados</span><span class="contador"><b>1</b>en preparación</span></div>
 
   <nav class="filtros" id="filtros" aria-label="Filtrar por categoría">
     <button class="filtro" data-cat="Todas" aria-pressed="true">Todas <span>17</span></button>
@@ -102,13 +102,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · Sin publicar</span>
-            <span class="pille acceso-demo">Demo no disponible</span>
+            <span class="pille acceso-publico">Abre desde cualquier sitio</span>
           </div>
           <h2>Impresión 3D (escudos)</h2>
-          <p class="desc">Escudos heráldicos 3D: configurador con precio al instante y prototipo impreso.</p>
+          <p class="desc">Escudos 3D: configurador público con precio al instante y prototipo.</p>
           <div class="pie">
-            <span class="detalle">prototipo <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
-            
+            <span class="detalle">prototipo <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 230 ms">Disponible</span></span>
+            <a class="abrir" href="https://erdeivih.github.io/impresion3d-demo/" target="_blank" rel="noopener">Abrir el configurador</a>
           </div>
         </div>
       </article>
@@ -124,7 +124,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>EntrenoLab Club</h2>
           <p class="desc">Pizarra táctica y gestión del club que ya usa su equipo.</p>
           <div class="pie">
-            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 223 ms">Disponible</span></span>
+            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 229 ms">Disponible</span></span>
             <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir la app</a>
           </div>
         </div>
@@ -141,7 +141,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>EntrenoLab Comercial</h2>
           <p class="desc">Gestión de clubes y entrenamientos para fútbol base, con demo abierta.</p>
           <div class="pie">
-            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 239 ms">Disponible</span></span>
+            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 209 ms">Disponible</span></span>
             <a class="abrir" href="https://erdeivih.github.io/entrenolab-demo/" target="_blank" rel="noopener">Abrir la demo</a>
           </div>
         </div>
@@ -153,13 +153,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · Tailscale</span>
-            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+            <span class="pille acceso-publico">Abre desde cualquier sitio</span>
           </div>
           <h2>Fondo Popular</h2>
-          <p class="desc">Fútbol federado de Castilla y León: resultados, clasificaciones y actas.</p>
+          <p class="desc">Fútbol federado de Castilla y León: demo pública con la web real.</p>
           <div class="pie">
-            <span class="detalle">en curso <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
-            
+            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 291 ms">Disponible</span></span>
+            <a class="abrir" href="https://erdeivih.github.io/fondo-popular-demo/" target="_blank" rel="noopener">Abrir la demo</a>
           </div>
         </div>
       </article>
@@ -170,10 +170,10 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · En el PC</span>
-            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+            <span class="pille acceso-casa">Solo en casa</span>
           </div>
           <h2>Cesta</h2>
-          <p class="desc">Superapp de compra: compara precios, recetas y calorías.</p>
+          <p class="desc">Comparador de precios con API y base de datos; se abre en el PC.</p>
           <div class="pie">
             <span class="detalle">en curso <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
             
@@ -187,10 +187,10 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto · Privado</span>
-            <span class="pille acceso-privado">Privado</span>
+            <span class="pille acceso-preparacion">En preparación</span>
           </div>
           <h2>CueDigital</h2>
-          <p class="desc">Cuaderno de campo y gestión de la explotación agrícola.</p>
+          <p class="desc">Cuaderno de campo con PostgreSQL: privado hasta desplegar su servidor.</p>
           <div class="pie">
             <span class="detalle">en curso <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
             
@@ -204,10 +204,10 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · En casa</span>
-            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+            <span class="pille acceso-casa">Solo en casa</span>
           </div>
           <h2>Chollos</h2>
-          <p class="desc">Buscador de segunda mano que valora cada oferta y avisa si es chollo.</p>
+          <p class="desc">Buscador con panel FastAPI y SQLite; se abre en el PC.</p>
           <div class="pie">
             <span class="detalle">en espera <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
             
@@ -221,13 +221,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · En casa</span>
-            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+            <span class="pille acceso-publico">Abre desde cualquier sitio</span>
           </div>
           <h2>Empleo</h2>
-          <p class="desc">Vigía de convocatorias y bolsas de informática con plazo abierto.</p>
+          <p class="desc">Convocatorias de informática: vista estática del vigía.</p>
           <div class="pie">
-            <span class="detalle">en curso <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
-            
+            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 221 ms">Disponible</span></span>
+            <a class="abrir" href="https://erdeivih.github.io/empleo-demo/" target="_blank" rel="noopener">Ver convocatorias</a>
           </div>
         </div>
       </article>
@@ -238,7 +238,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · Tailscale</span>
-            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+            <span class="pille acceso-casa">Solo en casa</span>
           </div>
           <h2>Lyfta (Garmin)</h2>
           <p class="desc">Entreno, reloj y análisis de sueño, HRV y carga.</p>
@@ -255,13 +255,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal · Privado</span>
-            <span class="pille acceso-privado">Privado</span>
+            <span class="pille acceso-publico">Abre desde cualquier sitio</span>
           </div>
           <h2>Genealogía</h2>
-          <p class="desc">Árbol familiar con fuentes documentales y privacidad de vivos.</p>
+          <p class="desc">Árbol familiar con vivos ocultos (vista de demostración).</p>
           <div class="pie">
-            <span class="detalle">en espera <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
-            
+            <span class="detalle">en espera <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 245 ms">Disponible</span></span>
+            <a class="abrir" href="https://erdeivih.github.io/genealogia-demo/" target="_blank" rel="noopener">Ver el árbol</a>
           </div>
         </div>
       </article>
@@ -277,7 +277,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <h2>Data School</h2>
           <p class="desc">Portal de contenido de datos e IA: paquetes, guías y datasets.</p>
           <div class="pie">
-            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 224 ms">Disponible</span></span>
+            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 261 ms">Disponible</span></span>
             <a class="abrir" href="https://erdeivih.github.io/data-school-site/" target="_blank" rel="noopener">Abrir el portal</a>
           </div>
         </div>
@@ -289,13 +289,13 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Estudio · Sin publicar</span>
-            <span class="pille acceso-demo">Demo no disponible</span>
+            <span class="pille acceso-publico">Abre desde cualquier sitio</span>
           </div>
           <h2>OpoFuente</h2>
-          <p class="desc">Temario común de oposiciones de informática C1 para estudiar.</p>
+          <p class="desc">Temario de oposiciones de informática C1; demo estática navegable.</p>
           <div class="pie">
-            <span class="detalle">en curso <span class="pille estado-servicio-sin-comprobar" title="Sin comprobación publicada para este proyecto">Sin comprobar</span></span>
-            
+            <span class="detalle">en curso <span class="pille estado-servicio-disponible" title="Comprobado por HTTP · 302 ms">Disponible</span></span>
+            <a class="abrir" href="https://erdeivih.github.io/opofuente-demo/" target="_blank" rel="noopener">Abrir la demo</a>
           </div>
         </div>
       </article>
@@ -340,7 +340,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Herramienta · Local</span>
-            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+            <span class="pille acceso-casa">Solo en casa</span>
           </div>
           <h2>Inforepositorios</h2>
           <p class="desc">Catálogo de repositorios con RAG neuronal y guardados.</p>
@@ -357,7 +357,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Infraestructura · En casa</span>
-            <span class="pille acceso-casa">Solo en casa/Tailscale</span>
+            <span class="pille acceso-casa">Solo en casa</span>
           </div>
           <h2>Servidor</h2>
           <p class="desc">Infraestructura, servicios y despliegue de todos los proyectos.</p>

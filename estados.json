@@ -1,32 +1,67 @@
 {
- "comprobado": "2026-11-10T10:59:25+01:00",
+ "comprobado": "2026-11-10T11:09:13+01:00",
  "fuente": "infra/estado/comprobar-estados.py",
  "servicios": {
   "data-school": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 224,
+   "latencia_ms": 261,
    "url": "https://erdeivih.github.io/data-school-site/",
    "nombre": "Data School"
+  },
+  "empleo": {
+   "estado": "disponible",
+   "http": 200,
+   "latencia_ms": 221,
+   "url": "https://erdeivih.github.io/empleo-demo/",
+   "nombre": "Empleo"
   },
   "entrenolab-club": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 223,
+   "latencia_ms": 229,
    "url": "https://erdeivih.github.io/CDMPLab/",
    "nombre": "EntrenoLab Club"
   },
   "entrenolab-comercial": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 239,
+   "latencia_ms": 209,
    "url": "https://erdeivih.github.io/entrenolab-demo/",
    "nombre": "EntrenoLab Comercial"
+  },
+  "fondo-popular": {
+   "estado": "disponible",
+   "http": 200,
+   "latencia_ms": 291,
+   "url": "https://erdeivih.github.io/fondo-popular-demo/",
+   "nombre": "Fondo Popular"
+  },
+  "genealogia": {
+   "estado": "disponible",
+   "http": 200,
+   "latencia_ms": 245,
+   "url": "https://erdeivih.github.io/genealogia-demo/",
+   "nombre": "Genealogía"
+  },
+  "impresion3d": {
+   "estado": "disponible",
+   "http": 200,
+   "latencia_ms": 230,
+   "url": "https://erdeivih.github.io/impresion3d-demo/",
+   "nombre": "Impresión 3D (escudos)"
+  },
+  "opofuente": {
+   "estado": "disponible",
+   "http": 200,
+   "latencia_ms": 302,
+   "url": "https://erdeivih.github.io/opofuente-demo/",
+   "nombre": "OpoFuente"
   },
   "panel": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 339,
+   "latencia_ms": 374,
    "url": "https://erdeivih.github.io/panel/",
    "nombre": "Panel"
   }
