@@ -92,11 +92,11 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
       <p class="sub">Un solo sitio para entrar a todo lo que hay en marcha. Las tarjetas solo enlazan URLs públicas; las de casa llevan su sello.</p>
       <p class="aviso-version">Versión pública · solo enlaces que abren desde cualquier sitio</p>
     </div>
-    <div class="actualizado">Última comprobación: 10/11/2026 14:44</div>
+    <div class="actualizado">Última comprobación: 10/11/2026 14:59</div>
   </header>
 
   <nav class="filtros" id="filtros" aria-label="Filtrar">
-    <button class="filtro" data-filtro="abrible" aria-pressed="true">Puedo abrir ahora <span>8</span></button>
+    <button class="filtro" data-filtro="abrible" aria-pressed="true">Puedo abrir ahora <span>9</span></button>
     <button class="filtro" data-filtro="Todas" aria-pressed="false">Todas <span>17</span></button>
     <button class="filtro" data-filtro="Producto" aria-pressed="false">Producto <span>5</span></button>
     <button class="filtro" data-filtro="Personal" aria-pressed="false">Personal <span>5</span></button>
@@ -143,21 +143,21 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           </div>
         </div>
       </article>
-      <article class="tarjeta" data-id="fondo-popular" data-categoria="Producto" data-abrible="0">
+      <article class="tarjeta" data-id="fondo-popular" data-categoria="Producto" data-abrible="1">
         <div class="cap">
           <img src="capturas/proyectos/fondo-popular.png" alt="Captura de Fondo Popular" loading="lazy">
         </div>
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto</span>
-            <span class="pille sello-casa">Solo en casa</span>
+            <span class="pille sello-publico">Abre desde cualquier sitio</span>
           </div>
           <h2>Fondo Popular</h2>
-          <p class="desc">Fútbol federado de Castilla y León; demo en reparación, se abre por Tailscale.</p>
+          <p class="desc">Fútbol federado de Castilla y León: demo pública restaurada.</p>
           
           <div class="pie">
             <span class="detalle">en curso</span>
-            <span class="abrir secundario">Disponible en tu red</span>
+            <a class="abrir" href="https://erdeivih.github.io/fondo-popular-demo/" target="_blank" rel="noopener">Abrir Fondo Popular</a>
           </div>
         </div>
       </article>
@@ -298,10 +298,10 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           </div>
           <h2>CueDigital</h2>
           <p class="desc">Cuaderno de campo: demo pública; la versión con PostgreSQL queda privada.</p>
-          
+          <p class="nota">App completa por túnel de Cloudflare (la URL cambia si se reinicia); demo estática en GitHub Pages.</p>
           <div class="pie">
             <span class="detalle">en curso</span>
-            <a class="abrir" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir CueDigital</a>
+            <a class="abrir" href="https://attract-leeds-integer-asp.trycloudflare.com/" target="_blank" rel="noopener">Abrir CueDigital</a><a class="abrir secundario" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir CueDigital (demo)</a>
           </div>
         </div>
       </article>
@@ -316,7 +316,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           </div>
           <h2>Lyfta (Garmin)</h2>
           <p class="desc">Entreno, reloj y análisis de sueño, HRV y carga.</p>
-          
+          <p class="nota">HTTPS del tailnet (Tailscale Serve): abre con Tailscale activo, no desde Internet.</p>
           <div class="pie">
             <span class="detalle">desplegado</span>
             <span class="abrir secundario">Disponible en tu red</span>
