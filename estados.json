@@ -1,88 +1,88 @@
 {
- "comprobado": "2026-11-10T16:59:27+01:00",
+ "comprobado": "2026-11-10T17:14:28+01:00",
  "fuente": "infra/estado/comprobar-estados.py",
  "servicios": {
   "cuedigital": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 594,
+   "latencia_ms": 572,
    "url": "https://attract-leeds-integer-asp.trycloudflare.com/",
    "nombre": "CueDigital"
   },
   "cuedigital-demo": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 225,
+   "latencia_ms": 425,
    "url": "https://erdeivih.github.io/cuedigital-demo/",
    "nombre": "CueDigital (demo)"
   },
   "data-school": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 70,
+   "latencia_ms": 215,
    "url": "https://erdeivih.github.io/data-school-site/",
    "nombre": "Data School"
   },
   "empleo": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 72,
+   "latencia_ms": 212,
    "url": "https://erdeivih.github.io/empleo-demo/",
    "nombre": "Empleo"
   },
   "entrenolab": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 268,
+   "latencia_ms": 383,
    "url": "https://erdeivih.github.io/CDMPLab/",
    "nombre": "EntrenoLab"
   },
   "entrenolab-demo": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 69,
+   "latencia_ms": 211,
    "url": "https://erdeivih.github.io/entrenolab-demo/",
    "nombre": "EntrenoLab (demo)"
   },
   "fondo-popular": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 70,
+   "latencia_ms": 235,
    "url": "https://erdeivih.github.io/fondo-popular-demo/",
    "nombre": "Fondo Popular"
   },
   "genealogia": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 367,
+   "latencia_ms": 276,
    "url": "https://erdeivih.github.io/genealogia-demo/",
    "nombre": "Genealogía"
   },
   "impresion3d": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 228,
+   "latencia_ms": 249,
    "url": "https://erdeivih.github.io/impresion3d-demo/",
    "nombre": "Impresión 3D (escudos)"
   },
   "opofuente": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 69,
+   "latencia_ms": 243,
    "url": "https://erdeivih.github.io/opofuente-demo/",
    "nombre": "OpoFuente"
   },
   "panel": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 181,
+   "latencia_ms": 439,
    "url": "https://erdeivih.github.io/panel/",
    "nombre": "Panel"
   },
   "portafolio": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 235,
+   "latencia_ms": 210,
    "url": "https://erdeivih.github.io/",
    "nombre": "Portafolio"
   }
