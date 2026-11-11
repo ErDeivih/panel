@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Chollos — prototipo</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="topbar">
+    <a href="../prototipos.html">← Prototipos</a>
+    <a href="../index.html">Panel</a>
+  </nav>
+
+  <header>
+    <span class="badge">Prototipo · datos ficticios</span>
+    <h1>Chollos</h1>
+    <p class="lead">Ofertas encontradas y su histórico de precio. Productos, tiendas y descuentos son inventados.</p>
+  </header>
+
+  <p class="demo-banner">Datos ficticios: ningún producto ni precio de esta pantalla existe.</p>
+
+  <form class="toolbar" aria-label="Filtros de chollos">
+    <label class="field">Buscar
+      <input type="search" value="teclado" placeholder="Producto o tienda">
+    </label>
+    <label class="field">Categoría
+      <select><option>Todas</option><option>Informática</option><option>Hogar</option></select>
+    </label>
+    <button class="btn secondary" type="button">Ver guardados</button>
+  </form>
+
+  <section class="list" aria-label="Chollos">
+    <article class="deal">
+      <div><h3>Teclado mecánico 75 %</h3><p class="note">Tienda de ejemplo · mínimo histórico</p></div>
+      <p class="price">59,90 €<small>79,90 €</small></p>
+    </article>
+    <article class="deal">
+      <div><h3>Monitor 27" 1440p</h3><p class="note">Tienda de ejemplo · -18 %</p></div>
+      <p class="price">229,00 €<small>279,00 €</small></p>
+    </article>
+    <article class="deal">
+      <div><h3>Auriculares inalámbricos</h3><p class="note">Tienda de ejemplo · oferta flash</p></div>
+      <p class="price">49,95 €<small>69,95 €</small></p>
+    </article>
+    <article class="deal">
+      <div><h3>Disco SSD 1 TB</h3><p class="note">Tienda de ejemplo · precio estable</p></div>
+      <p class="price">64,50 €<small>71,00 €</small></p>
+    </article>
+  </section>
+
+  <section class="states" aria-label="Estados previstos">
+    <div class="state"><strong>Sin resultados.</strong> «No hay chollos con estos filtros.»</div>
+    <div class="state"><strong>Sin histórico.</strong> «Aún no hay precio anterior para comparar.»</div>
+  </section>
+
+  <p class="note">Prototipo estático · sin cookies · sin analítica · datos ficticios.</p>
+</div>
+</body>
+</html>
