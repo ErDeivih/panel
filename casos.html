@@ -70,10 +70,21 @@ h2{font-size:18px;margin:0;line-height:1.25}
 .pille.salud-sin-datos::before,.pille.salud-sin-comprobar::before{background:var(--suave)}
 .estado-publico{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end}
 .estado-publico .actualizado{font-size:12.5px}
+.caducidad{color:var(--suave);font-size:12px;border:1px dashed var(--borde);
+  border-radius:999px;padding:6px 10px}
+.caducidad.caducada{color:#ffd6d6;border-color:#7a2f2f}
 .cifras-salud{color:var(--suave);font-size:12.5px}
 .cifras-salud b{color:var(--texto)}
 .enlace-casos{font-size:12.5px;border:1px solid var(--borde);background:var(--panel);
   border-radius:999px;padding:8px 12px;min-height:44px;display:inline-flex;align-items:center}
+.historial{margin-top:28px;border-top:1px solid var(--borde);padding-top:18px}
+.historial h2{font-size:20px;margin:0 0 8px}
+.historial .sin-incidentes{color:var(--suave);font-size:13.5px}
+.incidentes{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.incidente{border:1px solid var(--borde);background:var(--panel);border-radius:10px;
+  padding:9px 12px;font-size:13px;color:var(--suave)}
+.incidente b{color:var(--texto)}
+.incidente.abierto{border-color:#7a2f2f}
 .abrir{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid #2b6b4d;
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
@@ -98,7 +109,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
     <div>
       <h1>Casos de los proyectos</h1>
       <p class="sub">Alternativa pública si una demo no responde. Sin enlaces privados.</p>
-      <p class="aviso-version">Última comprobación: 11/11/2026 11:59</p>
+      <p class="aviso-version">Última comprobación: 11/11/2026 12:01</p>
     </div>
     <a class="enlace-casos" href="index.html">Volver al panel</a>
   </header>
