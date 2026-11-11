@@ -47,8 +47,13 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0;letter-spacing:-.03e
 .sin-captura small{color:var(--suave);font-size:12px}
 .cuerpo{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
 .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.sellos{justify-content:flex-start}
 .categoria{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--suave)}
 h2{font-size:18px;margin:0;line-height:1.25}
+.acciones{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sin-accion{font-size:12px;color:var(--suave);border:1px dashed var(--borde);
+  border-radius:9px;padding:8px 10px}
+.accesos-rapidos{display:none}
 .desc{color:var(--suave);font-size:13.5px;margin:0}
 .nota{color:#ffd9a1;background:#3a2a121f;border:1px solid #5c431f;border-radius:9px;
   font-size:12px;padding:7px 9px;margin:0}
@@ -91,6 +96,13 @@ h2{font-size:18px;margin:0;line-height:1.25}
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
 footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid var(--borde);padding-top:16px}
+@media (max-width:600px){
+  .accesos-rapidos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 4px}
+  .acceso-rapido{min-height:48px;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:8px;border-radius:12px;border:1px solid #2b6b4d;
+    background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650;line-height:1.25}
+  .cap{display:none}
+}
 @media (max-width:520px){
   .envuelto{padding:18px 14px 50px}
   .rejilla{gap:12px}
@@ -114,13 +126,19 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
       <p class="aviso-version">Versión pública · solo enlaces que abren desde cualquier sitio</p>
     </div>
     <div class="estado-publico">
-      <span class="actualizado">Última comprobación: 11/11/2026 12:45</span>
-      <span class="caducidad">Caduca: 11/11/2026 13:15</span>
+      <span class="actualizado">Última comprobación: 11/11/2026 12:49</span>
+      <span class="caducidad">Caduca: 11/11/2026 13:19</span>
       <span class="cifras-salud"><b>9</b> en pie · <b>0</b> caídas · <b>0</b> sin datos · <b>8</b> sin comprobar</span>
       <a class="enlace-casos" href="casos.html">Casos</a>
       <a class="enlace-casos" href="#historial">Historial</a>
     </div>
   </header>
+
+    <nav class="accesos-rapidos" aria-label="Accesos rápidos">
+    <a class="acceso-rapido" href="https://erdeivih.github.io/fondo-popular-demo/">Abrir Fondo Popular</a>
+    <a class="acceso-rapido" href="https://erdeivih.github.io/empleo-demo/">Abrir Empleo</a>
+    <a class="acceso-rapido" href="https://erdeivih.github.io/data-school-site/">Abrir Data School</a>
+  </nav>
 
   <nav class="filtros" id="filtros" aria-label="Filtrar">
     <button class="filtro" data-filtro="abrible" aria-pressed="true">Puedo abrir ahora <span>9</span></button>
@@ -135,343 +153,326 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
 
   <main class="rejilla" id="rejilla">
       <article class="tarjeta" data-id="impresion3d" data-categoria="Producto" data-abrible="1">
-        <div class="cap">
-          <img src="capturas/proyectos/impresion3d.png" alt="Captura de Impresión 3D (escudos)" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Producto</span>
+          <span class="categoria">Producto</span>
+          <h2>Impresión 3D (escudos)</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/impresion3d-demo/" target="_blank" rel="noopener">Abrir Impresión 3D</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>Impresión 3D (escudos)</h2>
           <p class="desc">Escudos heráldicos 3D: configurador con precio al instante y prototipo.</p>
           
           <div class="pie">
-            <span class="detalle">prototipo · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/impresion3d-demo/" target="_blank" rel="noopener">Abrir Impresión 3D</a>
-            
+            <span class="detalle">prototipo · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/impresion3d.png" alt="Captura de Impresión 3D (escudos)" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="entrenolab" data-categoria="Producto" data-abrible="1">
+        <div class="cuerpo">
+          <span class="categoria">Producto</span>
+          <h2>EntrenoLab</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/entrenolab-demo/" target="_blank" rel="noopener">Probar demo de EntrenoLab</a><a class="abrir secundario" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir pizarra</a></div>
+          <div class="meta sellos">
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
+          </div>
+          <p class="desc">Pizarra táctica del club y demo comercial de gestión de clubes.</p>
+          <p class="nota">Demo: producto comercial de gestión. Pizarra: la app que ya usa el club.</p>
+          <div class="pie">
+            <span class="detalle">en curso · Última: 11/11 12:49</span>
+          </div>
+        </div>
         <div class="cap">
           <img src="capturas/proyectos/entrenolab.png" alt="Captura de EntrenoLab" loading="lazy">
         </div>
-        <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Producto</span>
-            <span class="pille acceso-publico">Demo pública</span>
-            <span class="pille salud-en-pie">En pie</span>
-          </div>
-          <h2>EntrenoLab</h2>
-          <p class="desc">Pizarra táctica del club y demo comercial de gestión de clubes.</p>
-          <p class="nota">App del club: la pizarra táctica que ya usa el equipo. Demo comercial: gestión y entrenamientos de un club.</p>
-          <div class="pie">
-            <span class="detalle">en curso · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir EntrenoLab (club)</a><a class="abrir secundario" href="https://erdeivih.github.io/entrenolab-demo/" target="_blank" rel="noopener">Abrir EntrenoLab (demo)</a>
-            
-          </div>
-        </div>
       </article>
       <article class="tarjeta" data-id="fondo-popular" data-categoria="Producto" data-abrible="1">
-        <div class="cap">
-          <img src="capturas/proyectos/fondo-popular.png" alt="Captura de Fondo Popular" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Producto</span>
+          <span class="categoria">Producto</span>
+          <h2>Fondo Popular</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/fondo-popular-demo/" target="_blank" rel="noopener">Abrir Fondo Popular</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>Fondo Popular</h2>
           <p class="desc">Fútbol federado de Castilla y León: demo pública restaurada.</p>
           
           <div class="pie">
-            <span class="detalle">en curso · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/fondo-popular-demo/" target="_blank" rel="noopener">Abrir Fondo Popular</a>
-            
+            <span class="detalle">en curso · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/fondo-popular.png" alt="Captura de Fondo Popular" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="data-school" data-categoria="Contenido" data-abrible="1">
-        <div class="cap">
-          <img src="capturas/proyectos/data-school.png" alt="Captura de Data School" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Contenido</span>
+          <span class="categoria">Contenido</span>
+          <h2>Data School</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/data-school-site/" target="_blank" rel="noopener">Abrir Data School</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>Data School</h2>
           <p class="desc">Portal de contenido de datos e IA: paquetes, guías y datasets.</p>
           
           <div class="pie">
-            <span class="detalle">en curso · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/data-school-site/" target="_blank" rel="noopener">Abrir Data School</a>
-            
+            <span class="detalle">en curso · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/data-school.png" alt="Captura de Data School" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="opofuente" data-categoria="Estudio" data-abrible="1">
-        <div class="cap">
-          <img src="capturas/proyectos/opofuente.png" alt="Captura de OpoFuente" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Estudio</span>
+          <span class="categoria">Estudio</span>
+          <h2>OpoFuente</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/opofuente-demo/" target="_blank" rel="noopener">Abrir OpoFuente</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>OpoFuente</h2>
           <p class="desc">Temario de oposiciones de informática C1; demo estática navegable.</p>
           
           <div class="pie">
-            <span class="detalle">en curso · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/opofuente-demo/" target="_blank" rel="noopener">Abrir OpoFuente</a>
-            
+            <span class="detalle">en curso · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/opofuente.png" alt="Captura de OpoFuente" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="genealogia" data-categoria="Personal" data-abrible="1">
-        <div class="cap">
-          <div class="sin-captura"><span>GE</span><small>Sin captura todavía</small></div>
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Personal</span>
+          <span class="categoria">Personal</span>
+          <h2>Genealogía</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/genealogia-demo/" target="_blank" rel="noopener">Abrir Genealogía</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>Genealogía</h2>
           <p class="desc">Árbol familiar con vivos ocultos (vista de demostración).</p>
           
           <div class="pie">
-            <span class="detalle">en espera · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/genealogia-demo/" target="_blank" rel="noopener">Abrir Genealogía</a>
-            
+            <span class="detalle">en espera · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <div class="sin-captura"><span>GE</span><small>Sin captura todavía</small></div>
         </div>
       </article>
       <article class="tarjeta" data-id="empleo" data-categoria="Personal" data-abrible="1">
-        <div class="cap">
-          <div class="sin-captura"><span>EM</span><small>Sin captura todavía</small></div>
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Personal</span>
+          <span class="categoria">Personal</span>
+          <h2>Empleo</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/empleo-demo/" target="_blank" rel="noopener">Abrir Empleo</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>Empleo</h2>
           <p class="desc">Convocatorias de informática: vista estática del vigía.</p>
           
           <div class="pie">
-            <span class="detalle">en curso · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/empleo-demo/" target="_blank" rel="noopener">Abrir Empleo</a>
-            
+            <span class="detalle">en curso · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <div class="sin-captura"><span>EM</span><small>Sin captura todavía</small></div>
         </div>
       </article>
       <article class="tarjeta" data-id="portafolio" data-categoria="Personal" data-abrible="1">
-        <div class="cap">
-          <div class="sin-captura"><span>DP</span><small>Sin captura todavía</small></div>
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Personal</span>
+          <span class="categoria">Personal</span>
+          <h2>Portafolio</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/" target="_blank" rel="noopener">Abrir Portafolio</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>Portafolio</h2>
           <p class="desc">Web personal: quién soy y qué proyectos hay publicados.</p>
           
           <div class="pie">
-            <span class="detalle">desplegado · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/" target="_blank" rel="noopener">Abrir Portafolio</a>
-            
+            <span class="detalle">desplegado · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <div class="sin-captura"><span>DP</span><small>Sin captura todavía</small></div>
         </div>
       </article>
       <article class="tarjeta" data-id="cesta" data-categoria="Producto" data-abrible="0">
-        <div class="cap">
-          <img src="capturas/proyectos/cesta.png" alt="Captura de Cesta" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Producto</span>
+          <span class="categoria">Producto</span>
+          <h2>Cesta</h2>
+          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-casa">Solo en casa</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>Cesta</h2>
           <p class="desc">Comparador de precios con API y base de datos; se abre en el PC.</p>
           
           <div class="pie">
             <span class="detalle">en curso · Sin medición</span>
-            <span class="abrir secundario">Disponible en tu red</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/cesta.png" alt="Captura de Cesta" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="chollos" data-categoria="Personal" data-abrible="0">
-        <div class="cap">
-          <img src="capturas/proyectos/chollos.png" alt="Captura de Chollos" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Personal</span>
+          <span class="categoria">Personal</span>
+          <h2>Chollos</h2>
+          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-casa">Solo en casa</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>Chollos</h2>
           <p class="desc">Buscador con panel FastAPI y SQLite; se abre en el PC.</p>
           
           <div class="pie">
             <span class="detalle">en espera · Sin medición</span>
-            <span class="abrir secundario">Disponible en tu red</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/chollos.png" alt="Captura de Chollos" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="cuedigital" data-categoria="Producto" data-abrible="1">
-        <div class="cap">
-          <img src="capturas/proyectos/cuedigital.png" alt="Captura de CueDigital" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Producto</span>
+          <span class="categoria">Producto</span>
+          <h2>CueDigital</h2>
+          <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir CueDigital (demo)</a></div>
+          <div class="meta sellos">
             <span class="pille acceso-publico">Demo pública</span>
             <span class="pille salud-en-pie">En pie</span>
           </div>
-          <h2>CueDigital</h2>
           <p class="desc">Cuaderno de campo: demo pública; la versión con PostgreSQL queda privada.</p>
           <p class="nota">Demo pública; la app completa con datos reales se abre por Tailscale desde el lanzador privado.</p>
           <div class="pie">
-            <span class="detalle">en curso · Última: 11/11 12:45</span>
-            <a class="abrir" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir CueDigital (demo)</a>
-            
+            <span class="detalle">en curso · Última: 11/11 12:49</span>
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/cuedigital.png" alt="Captura de CueDigital" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="garmin" data-categoria="Personal" data-abrible="0">
-        <div class="cap">
-          <img src="capturas/proyectos/garmin.png" alt="Captura de Lyfta (Garmin)" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Personal</span>
+          <span class="categoria">Personal</span>
+          <h2>Lyfta (Garmin)</h2>
+          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-casa">Solo en casa</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>Lyfta (Garmin)</h2>
           <p class="desc">Entreno, reloj y análisis de sueño, HRV y carga.</p>
           <p class="nota">HTTPS del tailnet (Tailscale Serve): abre con Tailscale activo, no desde Internet.</p>
           <div class="pie">
             <span class="detalle">desplegado · Sin medición</span>
-            <span class="abrir secundario">Disponible en tu red</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/garmin.png" alt="Captura de Lyfta (Garmin)" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="inforepositorios" data-categoria="Herramienta" data-abrible="0">
-        <div class="cap">
-          <img src="capturas/proyectos/inforepositorios.png" alt="Captura de Inforepositorios" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Herramienta</span>
+          <span class="categoria">Herramienta</span>
+          <h2>Inforepositorios</h2>
+          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-casa">Solo en casa</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>Inforepositorios</h2>
           <p class="desc">Catálogo de repositorios con RAG neuronal y guardados.</p>
           
           <div class="pie">
             <span class="detalle">en curso · Sin medición</span>
-            <span class="abrir secundario">Disponible en tu red</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/inforepositorios.png" alt="Captura de Inforepositorios" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="servidor" data-categoria="Infraestructura" data-abrible="0">
-        <div class="cap">
-          <img src="capturas/proyectos/servidor.svg" alt="Captura de Servidor" loading="lazy">
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Infraestructura</span>
+          <span class="categoria">Infraestructura</span>
+          <h2>Servidor</h2>
+          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-casa">Solo en casa</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>Servidor</h2>
           <p class="desc">Infraestructura, servicios y despliegue de todos los proyectos.</p>
           
           <div class="pie">
             <span class="detalle">en curso · Sin medición</span>
-            <span class="abrir secundario">Disponible en tu red</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <img src="capturas/proyectos/servidor.svg" alt="Captura de Servidor" loading="lazy">
         </div>
       </article>
       <article class="tarjeta" data-id="homelab" data-categoria="Infraestructura" data-abrible="0">
-        <div class="cap">
-          <div class="sin-captura"><span>HL</span><small>Sin captura todavía</small></div>
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Infraestructura</span>
+          <span class="categoria">Infraestructura</span>
+          <h2>Homelab</h2>
+          <div class="acciones"><span class="sin-accion">Acceso privado</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-privado">Privado</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>Homelab</h2>
           <p class="desc">Laboratorio de casa: virtualización, servicios y agentes autónomos.</p>
           
           <div class="pie">
             <span class="detalle">en curso · Sin medición</span>
-            <span class="abrir secundario">Acceso privado</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <div class="sin-captura"><span>HL</span><small>Sin captura todavía</small></div>
         </div>
       </article>
       <article class="tarjeta" data-id="asignaturas" data-categoria="Estudio" data-abrible="0">
-        <div class="cap">
-          <div class="sin-captura"><span>AS</span><small>Sin captura todavía</small></div>
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Estudio</span>
+          <span class="categoria">Estudio</span>
+          <h2>Asignaturas</h2>
+          <div class="acciones"><span class="sin-accion">Acceso privado</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-privado">Privado</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>Asignaturas</h2>
           <p class="desc">Apuntes y trabajos del máster: Bioinformática, CAP y Criptografía.</p>
           
           <div class="pie">
             <span class="detalle">en espera · Sin medición</span>
-            <span class="abrir secundario">Acceso privado</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <div class="sin-captura"><span>AS</span><small>Sin captura todavía</small></div>
         </div>
       </article>
       <article class="tarjeta" data-id="tfm" data-categoria="Estudio" data-abrible="0">
-        <div class="cap">
-          <div class="sin-captura"><span>TF</span><small>Sin captura todavía</small></div>
-        </div>
         <div class="cuerpo">
-          <div class="meta">
-            <span class="categoria">Estudio</span>
+          <span class="categoria">Estudio</span>
+          <h2>TFM</h2>
+          <div class="acciones"><span class="sin-accion">Acceso privado</span></div>
+          <div class="meta sellos">
             <span class="pille acceso-privado">Privado</span>
             <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
-          <h2>TFM</h2>
           <p class="desc">Trabajo de fin de máster: memoria, pruebas y anexos.</p>
           
           <div class="pie">
             <span class="detalle">en espera · Sin medición</span>
-            <span class="abrir secundario">Acceso privado</span>
-            
           </div>
+        </div>
+        <div class="cap">
+          <div class="sin-captura"><span>TF</span><small>Sin captura todavía</small></div>
         </div>
       </article>
   </main>

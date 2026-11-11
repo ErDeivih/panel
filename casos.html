@@ -45,8 +45,13 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0;letter-spacing:-.03e
 .sin-captura small{color:var(--suave);font-size:12px}
 .cuerpo{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
 .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.sellos{justify-content:flex-start}
 .categoria{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--suave)}
 h2{font-size:18px;margin:0;line-height:1.25}
+.acciones{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sin-accion{font-size:12px;color:var(--suave);border:1px dashed var(--borde);
+  border-radius:9px;padding:8px 10px}
+.accesos-rapidos{display:none}
 .desc{color:var(--suave);font-size:13.5px;margin:0}
 .nota{color:#ffd9a1;background:#3a2a121f;border:1px solid #5c431f;border-radius:9px;
   font-size:12px;padding:7px 9px;margin:0}
@@ -89,6 +94,13 @@ h2{font-size:18px;margin:0;line-height:1.25}
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
 footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid var(--borde);padding-top:16px}
+@media (max-width:600px){
+  .accesos-rapidos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 4px}
+  .acceso-rapido{min-height:48px;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:8px;border-radius:12px;border:1px solid #2b6b4d;
+    background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650;line-height:1.25}
+  .cap{display:none}
+}
 @media (max-width:520px){
   .envuelto{padding:18px 14px 50px}
   .rejilla{gap:12px}
@@ -109,7 +121,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
     <div>
       <h1>Casos de los proyectos</h1>
       <p class="sub">Alternativa pública si una demo no responde. Sin enlaces privados.</p>
-      <p class="aviso-version">Última comprobación: 11/11/2026 12:45</p>
+      <p class="aviso-version">Última comprobación: 11/11/2026 12:49</p>
     </div>
     <a class="enlace-casos" href="index.html">Volver al panel</a>
   </header>
@@ -125,7 +137,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
   <p>Pizarra táctica del club y demo comercial de gestión de clubes.</p>
   <p><span class="pille acceso-publico">Demo pública</span>
      <span class="pille salud-en-pie">En pie</span></p>
-  <p class="enlaces"><a href="https://erdeivih.github.io/CDMPLab/">Abrir demo</a><a href="https://erdeivih.github.io/entrenolab-demo/">Abrir segunda demo</a><a href="https://github.com/ErDeivih/CDMPLab">Repositorio público</a></p>
+  <p class="enlaces"><a href="https://erdeivih.github.io/entrenolab-demo/">Abrir demo</a><a href="https://erdeivih.github.io/CDMPLab/">Abrir segunda demo</a><a href="https://github.com/ErDeivih/CDMPLab">Repositorio público</a></p>
 </section><section id="fondo-popular">
   <h2>Fondo Popular</h2>
   <p>Fútbol federado de Castilla y León: demo pública restaurada.</p>
