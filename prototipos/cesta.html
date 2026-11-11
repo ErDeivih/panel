@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Cesta — prototipo</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="topbar">
+    <a href="../prototipos.html">← Prototipos</a>
+    <a href="../index.html">Panel</a>
+  </nav>
+
+  <header>
+    <span class="badge">Prototipo · datos ficticios</span>
+    <h1>Cesta</h1>
+    <p class="lead">La compra de la semana comparada entre supermercados. Precios y tiendas inventados.</p>
+  </header>
+
+  <p class="demo-banner">Datos ficticios: productos, precios y disponibilidad no son reales.</p>
+
+  <form class="toolbar" aria-label="Ajustes de la cesta">
+    <label class="field">Supermercado
+      <select><option>Comparar todos</option><option>Mercadona</option><option>Lidl</option><option>Carrefour</option></select>
+    </label>
+    <label class="field">Ciudad
+      <select><option>Valladolid</option><option>Salamanca</option><option>Palencia</option></select>
+    </label>
+    <button class="btn secondary" type="button">Vaciar cesta</button>
+  </form>
+
+  <p class="note">5 productos · mejor precio total 14,82 €</p>
+
+  <section class="list" aria-label="Productos de la cesta">
+    <article class="row">
+      <div><h3>Leche entera 1 L</h3><p class="meta">Mercadona 0,95 € · Lidl 0,92 € · Carrefour 0,98 €</p></div>
+      <p class="meta">Mejor en Lidl</p>
+      <p class="price best">0,92 €</p>
+    </article>
+    <article class="row">
+      <div><h3>Pan de molde 460 g</h3><p class="meta">Mercadona 1,35 € · Lidl 1,29 € · Carrefour 1,40 €</p></div>
+      <p class="meta">Mejor en Lidl</p>
+      <p class="price best">1,29 €</p>
+    </article>
+    <article class="row">
+      <div><h3>Huevos M · 12 unidades</h3><p class="meta">Mercadona 2,10 € · Lidl 2,05 € · Carrefour 2,19 €</p></div>
+      <p class="meta">Mejor en Lidl</p>
+      <p class="price best">2,05 €</p>
+    </article>
+    <article class="row">
+      <div><h3>Aceite de oliva virgen extra 1 L</h3><p class="meta">Mercadona 6,85 € · Lidl 6,95 € · Carrefour 6,75 €</p></div>
+      <p class="meta">Mejor en Carrefour</p>
+      <p class="price best">6,75 €</p>
+    </article>
+    <article class="row">
+      <div><h3>Café molido 250 g</h3><p class="meta">Mercadona 3,90 € · Lidl 3,75 € · Carrefour 3,99 €</p></div>
+      <p class="meta">Mejor en Lidl</p>
+      <p class="price best">3,75 €</p>
+    </article>
+  </section>
+
+  <section class="states" aria-label="Estados previstos">
+    <div class="state"><strong>Cesta vacía.</strong> «Añade el primer producto para comparar.»</div>
+    <div class="state"><strong>Sin precios.</strong> «No hay datos de esta tienda hoy.» Reintentar mañana.</div>
+  </section>
+
+  <p class="note">Prototipo estático · sin cookies · sin analítica · datos ficticios.</p>
+</div>
+</body>
+</html>

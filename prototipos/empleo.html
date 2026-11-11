@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Empleo — prototipo</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="topbar">
+    <a href="../prototipos.html">← Prototipos</a>
+    <a href="../index.html">Panel</a>
+  </nav>
+
+  <header>
+    <span class="badge">Prototipo · datos ficticios</span>
+    <h1>Empleo</h1>
+    <p class="lead">Convocatorias de informática para preparar la siguiente. Los datos de esta pantalla son inventados.</p>
+  </header>
+
+  <p class="demo-banner">Datos ficticios: puestos, organismos, fechas y plazos no son reales.</p>
+
+  <form class="toolbar" aria-label="Filtros de convocatorias">
+    <label class="field">Buscar
+      <input type="search" value="informática" placeholder="Puesto u organismo">
+    </label>
+    <label class="field">Organismo
+      <select><option>Todos</option><option>Junta de Castilla y León</option><option>Ayuntamientos</option></select>
+    </label>
+    <label class="field">Estado
+      <select><option>Todos</option><option>Plazo abierto</option><option>Cerrado</option></select>
+    </label>
+    <button class="btn secondary" type="button">Limpiar filtros</button>
+  </form>
+
+  <p class="note">5 convocatorias · 3 con plazo abierto</p>
+
+  <section class="list" aria-label="Convocatorias">
+    <article class="row">
+      <div><h3>Técnico/a de soporte informático</h3><p class="meta">Ayuntamiento de Valladolid · C1 · Valladolid</p></div>
+      <p class="meta">Hasta 19 nov 2026</p>
+      <span class="pill open">Abierto</span>
+    </article>
+    <article class="row">
+      <div><h3>Gestor/a de sistemas</h3><p class="meta">Junta de Castilla y León · A2 · Valladolid</p></div>
+      <p class="meta">Hasta 24 nov 2026</p>
+      <span class="pill open">Abierto</span>
+    </article>
+    <article class="row">
+      <div><h3>Técnico/a de datos</h3><p class="meta">Diputación de Salamanca · A2 · Salamanca</p></div>
+      <p class="meta">Hasta 28 nov 2026</p>
+      <span class="pill open">Abierto</span>
+    </article>
+    <article class="row">
+      <div><h3>Administrativo/a</h3><p class="meta">Ayuntamiento de Palencia · C1 · Palencia</p></div>
+      <p class="meta">Cerrado el 6 nov 2026</p>
+      <span class="pill closed">Cerrado</span>
+    </article>
+    <article class="row">
+      <div><h3>Analista de aplicaciones</h3><p class="meta">Universidad de León · A2 · León</p></div>
+      <p class="meta">Cerrado el 9 nov 2026</p>
+      <span class="pill closed">Cerrado</span>
+    </article>
+  </section>
+
+  <section class="states" aria-label="Estados previstos">
+    <div class="state"><strong>Sin resultados.</strong> «No hay convocatorias con estos filtros.» Botón para limpiar.</div>
+    <div class="state"><strong>Error de carga.</strong> «No se pudo consultar el boletín.» Reintentar y avisar.</div>
+  </section>
+
+  <p class="note">Prototipo estático · sin cookies · sin analítica · datos ficticios.</p>
+</div>
+</body>
+</html>

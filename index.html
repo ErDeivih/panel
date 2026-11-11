@@ -10,31 +10,35 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0f15'/%3E%3Ctext x='32' y='42' font-family='system-ui' font-size='26' font-weight='700' text-anchor='middle' fill='%233ddc97'%3EPD%3C/text%3E%3C/svg%3E">
 <style>
 :root{
-  --fondo:#0a0f15; --panel:#111a24; --panel2:#16222f; --borde:#22303f;
-  --texto:#e9eff7; --suave:#9db0c6; --verde:#3ddc97; --rojo:#ff6b6b;
+  --fondo:#0a0f15; --panel:#111a24; --panel2:#16222f; --borde:#2b3b4d;
+  --texto:#e9eff7; --suave:#b8c6d9; --verde:#3ddc97; --rojo:#ff6b6b;
   --ambar:#f5b942; --azul:#6cb6ff; --violeta:#b79bff; --radio:16px;
+  --t-2xs:12px; --t-xs:13px; --t-sm:14px; --t-md:15px; --t-lg:20px;
+  --t-xl:clamp(30px,4vw,44px);
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-6:24px;
 }
 *{box-sizing:border-box}
-body{margin:0;color:var(--texto);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+body{margin:0;color:var(--texto);font:var(--t-md)/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   background:radial-gradient(1100px 560px at 15% -10%,#123049 0%,var(--fondo) 55%)}
 a{color:inherit;text-decoration:none}
-.envuelto{max-width:1220px;margin:0 auto;padding:30px 18px 70px}
-header{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between}
-h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0;letter-spacing:-.03em}
-.sub{color:var(--suave);margin:10px 0 0;max-width:62ch}
-.actualizado{color:var(--suave);font-size:13px;border:1px solid var(--borde);background:var(--panel);
-  padding:8px 12px;border-radius:999px;white-space:nowrap}
-.aviso-version{color:var(--suave);font-size:12.5px;margin:14px 0 0}
+:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.envuelto{max-width:1220px;margin:0 auto;padding:var(--s-6) 18px 70px}
+header{display:flex;flex-wrap:wrap;gap:var(--s-4);align-items:flex-end;justify-content:space-between}
+h1{font-size:var(--t-xl);line-height:1.05;margin:0;letter-spacing:-.03em}
+.sub{color:var(--suave);margin:var(--s-2) 0 0;max-width:62ch}
+.actualizado{color:var(--suave);font-size:var(--t-xs);border:1px solid var(--borde);background:var(--panel);
+  padding:var(--s-2) var(--s-3);border-radius:999px;white-space:nowrap}
+.aviso-version{color:var(--suave);font-size:var(--t-xs);margin:var(--s-3) 0 0}
 .resumen{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 10px}
 .contador{border:1px solid var(--borde);background:var(--panel);border-radius:12px;
   padding:9px 14px;color:var(--suave);font-size:13px}
 .contador b{color:var(--texto);font-size:18px;margin-right:6px}
-.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
+.filtros{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:var(--s-4) 0 var(--s-6)}
 .filtro{cursor:pointer;border:1px solid var(--borde);background:var(--panel);color:var(--suave);
-  padding:8px 13px;border-radius:999px;font-size:13px;min-height:44px;display:inline-flex;align-items:center}
+  padding:var(--s-2) var(--s-3);border-radius:999px;font-size:var(--t-xs);min-height:44px;display:inline-flex;align-items:center}
 .filtro[aria-pressed="true"]{background:#16354a;color:#d6ecff;border-color:#2d6b91}
-.filtro span{color:var(--texto);margin-left:4px}
-.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px}
+.filtro span{color:var(--texto);margin-left:var(--s-1)}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:var(--s-4)}
 .tarjeta{display:flex;flex-direction:column;background:linear-gradient(180deg,var(--panel2),var(--panel));
   border:1px solid var(--borde);border-radius:var(--radio);overflow:hidden;
   transition:transform .15s ease,border-color .15s ease}
@@ -45,23 +49,23 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0;letter-spacing:-.03e
   justify-content:center;gap:6px;background:repeating-linear-gradient(135deg,#111a24 0 14px,#0d151d 14px 28px)}
 .sin-captura span{font-size:40px;font-weight:800;letter-spacing:-.04em;color:#ffffff1f}
 .sin-captura small{color:var(--suave);font-size:12px}
-.cuerpo{padding:14px 15px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
-.meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.cuerpo{padding:var(--s-4);display:flex;flex-direction:column;gap:var(--s-2);flex:1}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:var(--s-2);flex-wrap:wrap}
 .sellos{justify-content:flex-start}
-.categoria{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--suave)}
-h2{font-size:18px;margin:0;line-height:1.25}
-.acciones{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.sin-accion{font-size:12px;color:var(--suave);border:1px dashed var(--borde);
-  border-radius:9px;padding:8px 10px}
+.categoria{font-size:var(--t-2xs);letter-spacing:.09em;text-transform:uppercase;color:var(--suave)}
+h2{font-size:var(--t-lg);margin:0;line-height:1.25}
+.acciones{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center}
+.sin-accion{font-size:var(--t-2xs);color:var(--suave);border:1px dashed var(--borde);
+  border-radius:9px;padding:var(--s-2) var(--s-3)}
 .accesos-rapidos{display:none}
-.desc{color:var(--suave);font-size:13.5px;margin:0}
+.desc{color:var(--suave);font-size:var(--t-sm);margin:0}
 .nota{color:#ffd9a1;background:#3a2a121f;border:1px solid #5c431f;border-radius:9px;
-  font-size:12px;padding:7px 9px;margin:0}
-.pie{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;
-  padding-top:12px;flex-wrap:wrap}
-.detalle{font-size:11.5px;color:var(--suave)}
+  font-size:var(--t-2xs);padding:var(--s-2) var(--s-2);margin:0}
+.pie{display:flex;align-items:center;justify-content:space-between;gap:var(--s-2);margin-top:auto;
+  padding-top:var(--s-3);flex-wrap:wrap}
+.detalle{font-size:var(--t-2xs);color:var(--suave)}
 .pille{display:inline-flex;align-items:center;gap:6px;flex:none;
-  font-size:11px;font-weight:650;padding:4px 9px;border-radius:999px;
+  font-size:var(--t-2xs);font-weight:650;padding:var(--s-1) var(--s-2);border-radius:999px;
   background:#0a0f15;border:1px solid var(--borde);color:var(--texto);white-space:nowrap}
 .pille::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--suave)}
 .pille.acceso-publico{border-color:#2b6b4d;color:#c9ffe9}
@@ -92,10 +96,12 @@ h2{font-size:18px;margin:0;line-height:1.25}
   padding:9px 12px;font-size:13px;color:var(--suave)}
 .incidente b{color:var(--texto)}
 .incidente.abierto{border-color:#7a2f2f}
-.abrir{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid #2b6b4d;
-  background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
+.abrir{display:inline-block;padding:var(--s-2) var(--s-3);border-radius:10px;border:1px solid #2b6b4d;
+  background:#173528;color:#c9ffe9;font-size:var(--t-xs);font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
-footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid var(--borde);padding-top:16px}
+.abrir:active,.filtro:active,.acceso-rapido:active,.enlace-casos:active{transform:scale(.97)}
+footer{margin-top:36px;color:var(--suave);font-size:var(--t-2xs);border-top:1px solid var(--borde);padding-top:16px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:600px){
   .accesos-rapidos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 4px}
   .acceso-rapido{min-height:48px;display:flex;align-items:center;justify-content:center;
@@ -129,6 +135,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
       <span class="actualizado">Última comprobación: 11/11/2026 15:59</span>
       <span class="caducidad">Caduca: 11/11/2026 16:29</span>
       <span class="cifras-salud"><b>9</b> en pie · <b>0</b> caídas · <b>0</b> sin datos · <b>8</b> sin comprobar</span>
+      <a class="enlace-casos" href="prototipos.html">Prototipos</a>
       <a class="enlace-casos" href="casos.html">Casos</a>
       <a class="enlace-casos" href="#historial">Historial</a>
     </div>
