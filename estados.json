@@ -1,46 +1,46 @@
 {
- "comprobado": "2026-11-11T11:05:42+01:00",
+ "comprobado": "2026-11-11T11:10:06+01:00",
  "fuente": "infra/estado/comprobar-estados.py",
  "servicios": {
   "cuedigital": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 229,
+   "latencia_ms": 257,
    "url": "https://erdeivih.github.io/cuedigital-demo/",
    "nombre": "CueDigital"
   },
   "data-school": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 296,
+   "latencia_ms": 381,
    "url": "https://erdeivih.github.io/data-school-site/",
    "nombre": "Data School"
   },
   "empleo": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 267,
+   "latencia_ms": 942,
    "url": "https://erdeivih.github.io/empleo-demo/",
    "nombre": "Empleo"
   },
   "entrenolab": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 232,
+   "latencia_ms": 491,
    "url": "https://erdeivih.github.io/CDMPLab/",
    "nombre": "EntrenoLab"
   },
   "entrenolab-demo": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 253,
+   "latencia_ms": 793,
    "url": "https://erdeivih.github.io/entrenolab-demo/",
    "nombre": "EntrenoLab (demo)"
   },
   "fondo-popular": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 252,
+   "latencia_ms": 370,
    "url": "https://erdeivih.github.io/fondo-popular-demo/",
    "nombre": "Fondo Popular"
   },
@@ -54,28 +54,28 @@
   "impresion3d": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 237,
+   "latencia_ms": 894,
    "url": "https://erdeivih.github.io/impresion3d-demo/",
    "nombre": "Impresión 3D (escudos)"
   },
   "opofuente": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 262,
+   "latencia_ms": 1256,
    "url": "https://erdeivih.github.io/opofuente-demo/",
    "nombre": "OpoFuente"
   },
   "panel": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 411,
+   "latencia_ms": 1884,
    "url": "https://erdeivih.github.io/panel/",
    "nombre": "Panel"
   },
   "portafolio": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 249,
+   "latencia_ms": 345,
    "url": "https://erdeivih.github.io/",
    "nombre": "Portafolio"
   }
