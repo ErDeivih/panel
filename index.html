@@ -59,13 +59,23 @@ h2{font-size:18px;margin:0;line-height:1.25}
   font-size:11px;font-weight:650;padding:4px 9px;border-radius:999px;
   background:#0a0f15;border:1px solid var(--borde);color:var(--texto);white-space:nowrap}
 .pille::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--suave)}
-.pille.sello-publico{border-color:#2b6b4d;color:#c9ffe9}
-.pille.sello-publico::before{background:var(--verde)}
-.pille.sello-casa::before{background:var(--ambar)}
-.pille.sello-privado::before{background:var(--violeta)}
-.pille.sello-preparacion::before{background:var(--azul)}
-.pille.sello-no-disponible{border-color:#7a2f2f;color:#ffd6d6}
-.pille.sello-no-disponible::before{background:var(--rojo)}
+.pille.acceso-publico{border-color:#2b6b4d;color:#c9ffe9}
+.pille.acceso-publico::before{background:var(--verde)}
+.pille.acceso-casa::before{background:var(--ambar)}
+.pille.acceso-privado::before{background:var(--violeta)}
+.pille.acceso-preparacion::before{background:var(--azul)}
+.pille.salud-en-pie{border-color:#2b6b4d;color:#c9ffe9}
+.pille.salud-en-pie::before{background:var(--verde)}
+.pille.salud-caido{border-color:#7a2f2f;color:#ffd6d6}
+.pille.salud-caido::before{background:var(--rojo)}
+.pille.salud-sin-datos,.pille.salud-sin-comprobar{color:var(--suave)}
+.pille.salud-sin-datos::before,.pille.salud-sin-comprobar::before{background:var(--suave)}
+.estado-publico{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end}
+.estado-publico .actualizado{font-size:12.5px}
+.cifras-salud{color:var(--suave);font-size:12.5px}
+.cifras-salud b{color:var(--texto)}
+.enlace-casos{font-size:12.5px;border:1px solid var(--borde);background:var(--panel);
+  border-radius:999px;padding:8px 12px;min-height:44px;display:inline-flex;align-items:center}
 .abrir{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid #2b6b4d;
   background:#173528;color:#c9ffe9;font-size:12.5px;font-weight:650}
 .abrir.secundario{border-color:var(--borde);background:#1a2432;color:var(--suave)}
@@ -92,7 +102,11 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
       <p class="sub">Un solo sitio para entrar a todo lo que hay en marcha. Las tarjetas solo enlazan URLs públicas; las de casa llevan su sello.</p>
       <p class="aviso-version">Versión pública · solo enlaces que abren desde cualquier sitio</p>
     </div>
-    <div class="actualizado">Última comprobación: 11/11/2026 11:29</div>
+    <div class="estado-publico">
+      <span class="actualizado">Última comprobación: 11/11/2026 11:29</span>
+      <span class="cifras-salud"><b>9</b> en pie · <b>0</b> caídas · <b>0</b> sin datos · <b>8</b> sin comprobar</span>
+      <a class="enlace-casos" href="casos.html">Casos</a>
+    </div>
   </header>
 
   <nav class="filtros" id="filtros" aria-label="Filtrar">
@@ -114,7 +128,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>Impresión 3D (escudos)</h2>
           <p class="desc">Escudos heráldicos 3D: configurador con precio al instante y prototipo.</p>
@@ -122,6 +137,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">prototipo</span>
             <a class="abrir" href="https://erdeivih.github.io/impresion3d-demo/" target="_blank" rel="noopener">Abrir Impresión 3D</a>
+            
           </div>
         </div>
       </article>
@@ -132,7 +148,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>EntrenoLab</h2>
           <p class="desc">Pizarra táctica del club y demo comercial de gestión de clubes.</p>
@@ -140,6 +157,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <a class="abrir" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir EntrenoLab (club)</a><a class="abrir secundario" href="https://erdeivih.github.io/entrenolab-demo/" target="_blank" rel="noopener">Abrir EntrenoLab (demo)</a>
+            
           </div>
         </div>
       </article>
@@ -150,7 +168,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>Fondo Popular</h2>
           <p class="desc">Fútbol federado de Castilla y León: demo pública restaurada.</p>
@@ -158,6 +177,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <a class="abrir" href="https://erdeivih.github.io/fondo-popular-demo/" target="_blank" rel="noopener">Abrir Fondo Popular</a>
+            
           </div>
         </div>
       </article>
@@ -168,7 +188,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Contenido</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>Data School</h2>
           <p class="desc">Portal de contenido de datos e IA: paquetes, guías y datasets.</p>
@@ -176,6 +197,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <a class="abrir" href="https://erdeivih.github.io/data-school-site/" target="_blank" rel="noopener">Abrir Data School</a>
+            
           </div>
         </div>
       </article>
@@ -186,7 +208,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Estudio</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>OpoFuente</h2>
           <p class="desc">Temario de oposiciones de informática C1; demo estática navegable.</p>
@@ -194,6 +217,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <a class="abrir" href="https://erdeivih.github.io/opofuente-demo/" target="_blank" rel="noopener">Abrir OpoFuente</a>
+            
           </div>
         </div>
       </article>
@@ -204,7 +228,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>Genealogía</h2>
           <p class="desc">Árbol familiar con vivos ocultos (vista de demostración).</p>
@@ -212,6 +237,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en espera</span>
             <a class="abrir" href="https://erdeivih.github.io/genealogia-demo/" target="_blank" rel="noopener">Abrir Genealogía</a>
+            
           </div>
         </div>
       </article>
@@ -222,7 +248,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>Empleo</h2>
           <p class="desc">Convocatorias de informática: vista estática del vigía.</p>
@@ -230,6 +257,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <a class="abrir" href="https://erdeivih.github.io/empleo-demo/" target="_blank" rel="noopener">Abrir Empleo</a>
+            
           </div>
         </div>
       </article>
@@ -240,7 +268,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>Portafolio</h2>
           <p class="desc">Web personal: quién soy y qué proyectos hay publicados.</p>
@@ -248,6 +277,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">desplegado</span>
             <a class="abrir" href="https://erdeivih.github.io/" target="_blank" rel="noopener">Abrir Portafolio</a>
+            
           </div>
         </div>
       </article>
@@ -258,7 +288,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto</span>
-            <span class="pille sello-casa">Solo en casa</span>
+            <span class="pille acceso-casa">Solo en casa</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>Cesta</h2>
           <p class="desc">Comparador de precios con API y base de datos; se abre en el PC.</p>
@@ -266,6 +297,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <span class="abrir secundario">Disponible en tu red</span>
+            
           </div>
         </div>
       </article>
@@ -276,7 +308,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal</span>
-            <span class="pille sello-casa">Solo en casa</span>
+            <span class="pille acceso-casa">Solo en casa</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>Chollos</h2>
           <p class="desc">Buscador con panel FastAPI y SQLite; se abre en el PC.</p>
@@ -284,6 +317,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en espera</span>
             <span class="abrir secundario">Disponible en tu red</span>
+            
           </div>
         </div>
       </article>
@@ -294,7 +328,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Producto</span>
-            <span class="pille sello-publico">Abre desde cualquier sitio</span>
+            <span class="pille acceso-publico">Demo pública</span>
+            <span class="pille salud-en-pie">En pie</span>
           </div>
           <h2>CueDigital</h2>
           <p class="desc">Cuaderno de campo: demo pública; la versión con PostgreSQL queda privada.</p>
@@ -302,6 +337,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <a class="abrir" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir CueDigital (demo)</a>
+            
           </div>
         </div>
       </article>
@@ -312,7 +348,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Personal</span>
-            <span class="pille sello-casa">Solo en casa</span>
+            <span class="pille acceso-casa">Solo en casa</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>Lyfta (Garmin)</h2>
           <p class="desc">Entreno, reloj y análisis de sueño, HRV y carga.</p>
@@ -320,6 +357,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">desplegado</span>
             <span class="abrir secundario">Disponible en tu red</span>
+            
           </div>
         </div>
       </article>
@@ -330,7 +368,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Herramienta</span>
-            <span class="pille sello-casa">Solo en casa</span>
+            <span class="pille acceso-casa">Solo en casa</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>Inforepositorios</h2>
           <p class="desc">Catálogo de repositorios con RAG neuronal y guardados.</p>
@@ -338,6 +377,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <span class="abrir secundario">Disponible en tu red</span>
+            
           </div>
         </div>
       </article>
@@ -348,7 +388,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Infraestructura</span>
-            <span class="pille sello-casa">Solo en casa</span>
+            <span class="pille acceso-casa">Solo en casa</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>Servidor</h2>
           <p class="desc">Infraestructura, servicios y despliegue de todos los proyectos.</p>
@@ -356,6 +397,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <span class="abrir secundario">Disponible en tu red</span>
+            
           </div>
         </div>
       </article>
@@ -366,7 +408,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Infraestructura</span>
-            <span class="pille sello-privado">Privado</span>
+            <span class="pille acceso-privado">Privado</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>Homelab</h2>
           <p class="desc">Laboratorio de casa: virtualización, servicios y agentes autónomos.</p>
@@ -374,6 +417,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en curso</span>
             <span class="abrir secundario">Acceso privado</span>
+            
           </div>
         </div>
       </article>
@@ -384,7 +428,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Estudio</span>
-            <span class="pille sello-privado">Privado</span>
+            <span class="pille acceso-privado">Privado</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>Asignaturas</h2>
           <p class="desc">Apuntes y trabajos del máster: Bioinformática, CAP y Criptografía.</p>
@@ -392,6 +437,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en espera</span>
             <span class="abrir secundario">Acceso privado</span>
+            
           </div>
         </div>
       </article>
@@ -402,7 +448,8 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
         <div class="cuerpo">
           <div class="meta">
             <span class="categoria">Estudio</span>
-            <span class="pille sello-privado">Privado</span>
+            <span class="pille acceso-privado">Privado</span>
+            <span class="pille salud-sin-comprobar">Sin comprobar</span>
           </div>
           <h2>TFM</h2>
           <p class="desc">Trabajo de fin de máster: memoria, pruebas y anexos.</p>
@@ -410,6 +457,7 @@ footer{margin-top:36px;color:var(--suave);font-size:12.5px;border-top:1px solid 
           <div class="pie">
             <span class="detalle">en espera</span>
             <span class="abrir secundario">Acceso privado</span>
+            
           </div>
         </div>
       </article>
