@@ -1,96 +1,96 @@
 {
- "comprobado": "2026-11-12T20:14:24+01:00",
- "caduca": "2026-11-12T20:44:24+01:00",
+ "comprobado": "2026-11-12T20:29:24+01:00",
+ "caduca": "2026-11-12T20:59:24+01:00",
  "ttl_minutos": 30,
  "fuente": "infra/estado/comprobar-estados.py",
  "servicios": {
   "cuedigital": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 230,
+   "latencia_ms": 224,
    "url": "https://erdeivih.github.io/cuedigital-demo/",
    "nombre": "CueDigital",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "data-school": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 234,
+   "latencia_ms": 295,
    "url": "https://erdeivih.github.io/data-school-site/",
    "nombre": "Data School",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "empleo": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 285,
+   "latencia_ms": 236,
    "url": "https://erdeivih.github.io/empleo-demo/",
    "nombre": "Empleo",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "entrenolab": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 224,
+   "latencia_ms": 263,
    "url": "https://erdeivih.github.io/entrenolab-demo/",
    "nombre": "EntrenoLab",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "entrenolab-alt": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 259,
+   "latencia_ms": 241,
    "url": "https://erdeivih.github.io/CDMPLab/",
    "nombre": "EntrenoLab (alternativa)",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "fondo-popular": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 233,
+   "latencia_ms": 243,
    "url": "https://erdeivih.github.io/fondo-popular-demo/",
    "nombre": "Fondo Popular",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "genealogia": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 299,
+   "latencia_ms": 380,
    "url": "https://erdeivih.github.io/genealogia-demo/",
    "nombre": "Genealogía",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "impresion3d": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 241,
+   "latencia_ms": 245,
    "url": "https://erdeivih.github.io/impresion3d-demo/",
    "nombre": "Impresión 3D (escudos)",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "opofuente": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 238,
+   "latencia_ms": 234,
    "url": "https://erdeivih.github.io/opofuente-demo/",
    "nombre": "OpoFuente",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "panel": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 349,
+   "latencia_ms": 331,
    "url": "https://erdeivih.github.io/panel/",
    "nombre": "Panel",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   },
   "portafolio": {
    "estado": "disponible",
    "http": 200,
-   "latencia_ms": 258,
+   "latencia_ms": 240,
    "url": "https://erdeivih.github.io/",
    "nombre": "Portafolio",
-   "comprobado": "2026-11-12T20:14:24+01:00"
+   "comprobado": "2026-11-12T20:29:24+01:00"
   }
  },
  "historial": []
