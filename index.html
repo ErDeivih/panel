@@ -53,9 +53,11 @@ h2{font-size:var(--t-lg);line-height:var(--lh-tight);margin:0 0 var(--s-2)}
 .plegable summary::-webkit-details-marker{display:none}
 .plegable-cuerpo{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-2)}
 @media (min-width:601px){
-  .plegable[open] .plegable-cuerpo{position:absolute;top:calc(100% + var(--s-2));left:0;z-index:5;
-    margin-top:0;background:var(--panel2);border:1px solid var(--borde);border-radius:var(--radio-sm);
-    padding:var(--s-2);box-shadow:var(--sombra-2);min-width:max-content}
+  /* En escritorio no hay desplegable: las categorías van en la misma fila de filtros. */
+  .plegable{display:contents}
+  .plegable>summary{display:none}
+  .plegable[open] .plegable-cuerpo{display:contents;position:static;margin:0;background:none;
+    border:0;padding:0;box-shadow:none;min-width:0}
 }
 .rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:var(--s-4)}
 .tarjeta{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--borde);
@@ -72,8 +74,6 @@ h2 a:hover{text-decoration:underline}
 .abrir.secundario{border:0;background:none;color:var(--suave);padding:0;min-height:0;
   font-weight:400;text-decoration:underline;transition:none}
 .abrir.secundario:hover{transform:none}
-.sin-accion{font-size:var(--t-sm);color:var(--suave);border:1px dashed var(--borde);
-  border-radius:var(--radio-sm);padding:var(--s-2) var(--s-3)}
 .desc{color:var(--suave);margin:0}
 .nota{color:#ffd9a1;background:#3a2a1222;border:1px solid #5c431f;
   border-radius:var(--radio-sm);font-size:var(--t-sm);padding:var(--s-2);margin:0}
@@ -148,6 +148,7 @@ footer a{text-decoration:underline}
   .filtro{min-height:44px;font-size:var(--t-sm)}
   .cifras{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tabla thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .tabla caption{display:block;width:auto;margin:0 0 var(--s-2);padding:0;text-align:left}
   .tabla,.tabla tbody,.tabla tr,.tabla td{display:block;width:100%}
   .tabla{border:0;background:none}
   .tabla tr{border:1px solid var(--borde);border-radius:var(--radio-sm);background:var(--panel);
@@ -167,7 +168,7 @@ footer a{text-decoration:underline}
       <h1>Proyectos de David</h1>
       <p class="proposito">Un solo sitio para entrar a todo lo que hay en marcha.</p>
     </div>
-    <div class="franja"><span class="franja-dato"><b>9</b>/17 abribles</span><span class="franja-dato"><b>9</b>/9 en pie</span><span class="franja-dato">Actualizado 13/11 14:44</span><span class="franja-dato solo-escritorio">Caduca: 13/11 15:14</span><a class="franja-enlace" href="estado.html">Estado</a></div>
+    <div class="franja"><span class="franja-dato"><b>9</b>/17 abribles</span><span class="franja-dato"><b>9</b>/9 en pie</span><span class="franja-dato">Actualizado 13/11 14:59</span><span class="franja-dato solo-escritorio">Caduca: 13/11 15:29</span><a class="franja-enlace" href="estado.html">Estado</a></div>
   </header>
 
   <nav class="filtros" id="filtros" aria-label="Filtrar">
@@ -181,12 +182,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/impresion3d-demo/" target="_blank" rel="noopener">Abrir Impresión 3D</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Escudos heráldicos 3D: configurador con precio al instante y prototipo.</p>
           
           <div class="pie">
-            <span class="detalle">Producto · prototipo · Última: 13/11 14:44</span>
+            <span class="detalle">Producto · prototipo · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -199,12 +200,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/entrenolab-demo/" target="_blank" rel="noopener">Probar demo de EntrenoLab</a><a class="abrir secundario" href="https://erdeivih.github.io/CDMPLab/" target="_blank" rel="noopener">Abrir pizarra</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Pizarra táctica del club y demo comercial de gestión de clubes.</p>
           <p class="nota">Demo: producto comercial de gestión. Pizarra: la app que ya usa el club.</p>
           <div class="pie">
-            <span class="detalle">Producto · en curso · Última: 13/11 14:44</span>
+            <span class="detalle">Producto · en curso · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -217,12 +218,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/fondo-popular-demo/" target="_blank" rel="noopener">Abrir Fondo Popular</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Fútbol federado de Castilla y León: demo pública restaurada.</p>
           
           <div class="pie">
-            <span class="detalle">Producto · en curso · Última: 13/11 14:44</span>
+            <span class="detalle">Producto · en curso · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -235,12 +236,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/data-school-site/" target="_blank" rel="noopener">Abrir Data School</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Portal de contenido de datos e IA: paquetes, guías y datasets.</p>
           
           <div class="pie">
-            <span class="detalle">Contenido · en curso · Última: 13/11 14:44</span>
+            <span class="detalle">Contenido · en curso · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -253,12 +254,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/opofuente-demo/" target="_blank" rel="noopener">Abrir OpoFuente</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Temario de oposiciones de informática C1; demo estática navegable.</p>
           
           <div class="pie">
-            <span class="detalle">Estudio · en curso · Última: 13/11 14:44</span>
+            <span class="detalle">Estudio · en curso · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -271,12 +272,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/genealogia-demo/" target="_blank" rel="noopener">Abrir Genealogía</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Árbol familiar con vivos ocultos (vista de demostración).</p>
           
           <div class="pie">
-            <span class="detalle">Personal · en espera · Última: 13/11 14:44</span>
+            <span class="detalle">Personal · en espera · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -289,12 +290,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/empleo-demo/" target="_blank" rel="noopener">Abrir Empleo</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Convocatorias de informática: vista estática del vigía.</p>
           
           <div class="pie">
-            <span class="detalle">Personal · en curso · Última: 13/11 14:44</span>
+            <span class="detalle">Personal · en curso · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -307,12 +308,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/" target="_blank" rel="noopener">Abrir Portafolio</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Web personal: quién soy y qué proyectos hay publicados.</p>
           
           <div class="pie">
-            <span class="detalle">Personal · desplegado · Última: 13/11 14:44</span>
+            <span class="detalle">Personal · desplegado · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -322,7 +323,7 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="cesta" data-categoria="Producto" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/cesta.html">Cesta</a></h2>
-          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-casa">Solo en casa</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>
@@ -340,7 +341,7 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="chollos" data-categoria="Personal" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/chollos.html">Chollos</a></h2>
-          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-casa">Solo en casa</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>
@@ -361,12 +362,12 @@ footer a{text-decoration:underline}
           <div class="acciones"><a class="abrir" href="https://erdeivih.github.io/cuedigital-demo/" target="_blank" rel="noopener">Abrir CueDigital (demo)</a></div>
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-publico">Demo pública</span>
-            <span class="sello sello-salud salud-en-pie">En pie · 14:44</span>
+            <span class="sello sello-salud salud-en-pie">En pie · 14:59</span>
           </div>
           <p class="desc">Cuaderno de campo: demo pública; la versión con PostgreSQL queda privada.</p>
-          <p class="nota">Demo pública; la app completa con datos reales se abre por Tailscale desde el lanzador privado.</p>
+          
           <div class="pie">
-            <span class="detalle">Producto · en curso · Última: 13/11 14:44</span>
+            <span class="detalle">Producto · en curso · Última: 13/11 14:59</span>
           </div>
         </div>
         <div class="cap">
@@ -376,13 +377,13 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="garmin" data-categoria="Personal" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/garmin.html">Lyfta (Garmin)</a></h2>
-          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-casa">Solo en casa</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>
           </div>
           <p class="desc">Entreno, reloj y análisis de sueño, HRV y carga.</p>
-          <p class="nota">HTTPS del tailnet (Tailscale Serve): abre con Tailscale activo, no desde Internet.</p>
+          
           <div class="pie">
             <span class="detalle">Personal · desplegado · Sin medición</span>
           </div>
@@ -394,7 +395,7 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="inforepositorios" data-categoria="Herramienta" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/inforepositorios.html">Inforepositorios</a></h2>
-          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-casa">Solo en casa</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>
@@ -412,7 +413,7 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="servidor" data-categoria="Infraestructura" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/servidor.html">Servidor</a></h2>
-          <div class="acciones"><span class="sin-accion">Solo en casa</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-casa">Solo en casa</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>
@@ -430,7 +431,7 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="homelab" data-categoria="Infraestructura" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/homelab.html">Homelab</a></h2>
-          <div class="acciones"><span class="sin-accion">Acceso privado</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-privado">Privado</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>
@@ -448,7 +449,7 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="asignaturas" data-categoria="Estudio" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/asignaturas.html">Asignaturas</a></h2>
-          <div class="acciones"><span class="sin-accion">Acceso privado</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-privado">Privado</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>
@@ -466,7 +467,7 @@ footer a{text-decoration:underline}
       <article class="tarjeta" data-id="tfm" data-categoria="Estudio" data-abrible="0">
         <div class="cuerpo">
           <h2><a href="proyecto/tfm.html">TFM</a></h2>
-          <div class="acciones"><span class="sin-accion">Acceso privado</span></div>
+          
           <div class="meta sellos">
             <span class="sello sello-acceso acceso-privado">Privado</span>
             <span class="sello sello-salud salud-sin-comprobar">Sin comprobar</span>

@@ -52,9 +52,11 @@ h2{font-size:var(--t-lg);line-height:var(--lh-tight);margin:0 0 var(--s-2)}
 .plegable summary::-webkit-details-marker{display:none}
 .plegable-cuerpo{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-2)}
 @media (min-width:601px){
-  .plegable[open] .plegable-cuerpo{position:absolute;top:calc(100% + var(--s-2));left:0;z-index:5;
-    margin-top:0;background:var(--panel2);border:1px solid var(--borde);border-radius:var(--radio-sm);
-    padding:var(--s-2);box-shadow:var(--sombra-2);min-width:max-content}
+  /* En escritorio no hay desplegable: las categorías van en la misma fila de filtros. */
+  .plegable{display:contents}
+  .plegable>summary{display:none}
+  .plegable[open] .plegable-cuerpo{display:contents;position:static;margin:0;background:none;
+    border:0;padding:0;box-shadow:none;min-width:0}
 }
 .rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:var(--s-4)}
 .tarjeta{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--borde);
@@ -71,8 +73,6 @@ h2 a:hover{text-decoration:underline}
 .abrir.secundario{border:0;background:none;color:var(--suave);padding:0;min-height:0;
   font-weight:400;text-decoration:underline;transition:none}
 .abrir.secundario:hover{transform:none}
-.sin-accion{font-size:var(--t-sm);color:var(--suave);border:1px dashed var(--borde);
-  border-radius:var(--radio-sm);padding:var(--s-2) var(--s-3)}
 .desc{color:var(--suave);margin:0}
 .nota{color:#ffd9a1;background:#3a2a1222;border:1px solid #5c431f;
   border-radius:var(--radio-sm);font-size:var(--t-sm);padding:var(--s-2);margin:0}
@@ -147,6 +147,7 @@ footer a{text-decoration:underline}
   .filtro{min-height:44px;font-size:var(--t-sm)}
   .cifras{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tabla thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .tabla caption{display:block;width:auto;margin:0 0 var(--s-2);padding:0;text-align:left}
   .tabla,.tabla tbody,.tabla tr,.tabla td{display:block;width:100%}
   .tabla{border:0;background:none}
   .tabla tr{border:1px solid var(--borde);border-radius:var(--radio-sm);background:var(--panel);
@@ -166,7 +167,7 @@ footer a{text-decoration:underline}
       <a class="volver" href="index.html">← Panel</a>
       <h1>Casos de los proyectos</h1>
       <p class="proposito">Alternativa pública si una demo no responde. Sin enlaces privados.</p>
-      <p class="detalle">Última comprobación: 13/11/2026 14:44</p>
+      <p class="detalle">Última comprobación: 13/11/2026 14:59</p>
     </div>
   </header>
   <main>
