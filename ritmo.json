@@ -1,43 +1,44 @@
 {
  "esquema": "ritmo-panel/1",
- "actualizado": "2026-11-14T11:11",
+ "actualizado": "2026-11-14T15:07",
  "ventana": "5 min cerrada hace 1 min",
- "estado": "ok",
- "motivo": null,
+ "estado": "parcial",
+ "motivo": "5 cola(s) del PC con la cuenta de trabajos pendientes a medias por presupuesto de tiempo",
  "fuente_ritmo": "FACyLF · metricas-facylf.json",
- "medido_ritmo": "2026-11-14T11:08",
+ "medido_ritmo": "2026-11-14T15:03",
  "maquinas": {
   "pc": {
-   "por_min": 9.2,
-   "por_hora_estimado": 552.0,
+   "por_min": 9.0,
+   "por_hora_estimado": 540.0,
    "estado": "ok",
    "latencia_ms": {
-    "mediana": 1715,
-    "p95": 7775,
+    "mediana": 2040,
+    "p95": 4265,
     "muestras": 45
    },
    "resultados": {
-    "ok": 32,
-    "sin_datos": 13,
+    "ok": 42,
+    "sin_datos": 3,
     "fallos": 0,
     "total": 45
    },
    "en_cola": {
-    "trabajos": 1274552,
+    "trabajos": 649151,
     "colas_leidas": 26,
-    "colas_total": 26
+    "colas_total": 26,
+    "colas_parciales": 5
    },
-   "medido": "2026-11-14T11:08"
+   "medido": "2026-11-14T15:03"
   },
   "servidor": {
-   "por_min": 3.4,
-   "por_hora_estimado": 204.0,
+   "por_min": 1.8,
+   "por_hora_estimado": 108.0,
    "estado": "parcial",
    "latencia_ms": null,
    "resultados": null,
    "en_cola": null,
    "motivo": "del servidor solo se publica el ritmo: no hay fuente local de latencia, fallos ni cola",
-   "medido": "2026-11-14T11:08"
+   "medido": "2026-11-14T15:03"
   }
  },
  "referencia": {
