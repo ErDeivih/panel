@@ -1,0 +1,49 @@
+{
+ "esquema": "ritmo-panel/1",
+ "actualizado": "2026-11-14T11:11",
+ "ventana": "5 min cerrada hace 1 min",
+ "estado": "ok",
+ "motivo": null,
+ "fuente_ritmo": "FACyLF · metricas-facylf.json",
+ "medido_ritmo": "2026-11-14T11:08",
+ "maquinas": {
+  "pc": {
+   "por_min": 9.2,
+   "por_hora_estimado": 552.0,
+   "estado": "ok",
+   "latencia_ms": {
+    "mediana": 1715,
+    "p95": 7775,
+    "muestras": 45
+   },
+   "resultados": {
+    "ok": 32,
+    "sin_datos": 13,
+    "fallos": 0,
+    "total": 45
+   },
+   "en_cola": {
+    "trabajos": 1274552,
+    "colas_leidas": 26,
+    "colas_total": 26
+   },
+   "medido": "2026-11-14T11:08"
+  },
+  "servidor": {
+   "por_min": 3.4,
+   "por_hora_estimado": 204.0,
+   "estado": "parcial",
+   "latencia_ms": null,
+   "resultados": null,
+   "en_cola": null,
+   "motivo": "del servidor solo se publica el ritmo: no hay fuente local de latencia, fallos ni cola",
+   "medido": "2026-11-14T11:08"
+  }
+ },
+ "referencia": {
+  "fecha": "11/11/2026",
+  "pc_latencia_mediana_ms": 800,
+  "servidor_latencia_mediana_ms": 63900,
+  "fuente": "RITMO-MEDIDO.md"
+ }
+}

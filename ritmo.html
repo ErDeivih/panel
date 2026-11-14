@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; script-src 'sha256-/K1oB52Nh0i3aSOInqpHxBUQYT9WrVrpS6k9Dj+tewQ=' 'sha256-EwRh3nNInzwvNk5Tjw/pBqD1VHtE9IyIErN3oXSBc+w='">
+<meta name="referrer" content="no-referrer">
+<title>Ritmo de peticiones — Proyectos de David</title>
+<style>
+:root{
+  --fondo:#0a0f15; --panel:#111a24; --panel2:#16222f; --borde:#2b3b4d;
+  --texto:#e9eff7; --suave:#b8c6d9;
+  --verde:#3ddc97; --rojo:#ff6b6b; --ambar:#f5b942; --azul:#6cb6ff; --violeta:#b79bff;
+  --ok-bg:#10321f; --ok-bd:#2b6b4d; --ok-tx:#c9ffe9;
+  --mal-bg:#3a1717; --mal-bd:#7a2f2f; --mal-tx:#ffd6d6;
+  --neu-bg:#18222d; --neu-bd:#2b3b4d; --neu-tx:#b8c6d9;
+  --info-bg:#12293a; --info-bd:#2d6b91; --info-tx:#d6ecff;
+  --t-sm:12px; --t-md:15px; --t-lg:22px; --t-xl:28px;
+  --t-display:clamp(28px,4vw,42px);
+  --lh-tight:1.15; --lh-normal:1.55;
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-6:24px; --s-8:32px;
+  --radio:12px; --radio-sm:8px; --radio-pill:999px;
+  --sombra-1:0 1px 2px #00000066; --sombra-2:0 10px 24px #00000066;
+  --foco:2px solid var(--azul);
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--texto);background:var(--fondo);
+  font:var(--t-md)/var(--lh-normal) system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:var(--foco);outline-offset:2px}
+.envuelto{max-width:1220px;margin:0 auto;padding:var(--s-6) var(--s-4) var(--s-8)}
+.cabecera{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:var(--s-3);border-bottom:1px solid var(--borde);padding-bottom:var(--s-3)}
+h1{font-size:var(--t-display);line-height:var(--lh-tight);margin:0;letter-spacing:-.02em}
+h2{font-size:var(--t-lg);line-height:var(--lh-tight);margin:0 0 var(--s-2)}
+.proposito{color:var(--suave);margin:var(--s-2) 0 0;max-width:58ch}
+.franja{display:flex;flex-wrap:nowrap;gap:var(--s-2);align-items:center;overflow:hidden}
+.franja-dato{color:var(--suave);font-size:var(--t-sm);background:var(--panel);
+  border:1px solid var(--borde);border-radius:var(--radio-pill);
+  padding:var(--s-1) var(--s-2);white-space:nowrap}
+.franja-dato b{color:var(--texto)}
+.franja-enlace{display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  font-size:var(--t-sm);border:1px solid var(--info-bd);background:var(--info-bg);
+  color:var(--info-tx);border-radius:var(--radio-pill);padding:var(--s-2) var(--s-3);
+  white-space:nowrap}
+.filtros{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center;margin:var(--s-4) 0}
+.filtro{cursor:pointer;border:1px solid var(--borde);background:var(--panel);color:var(--suave);
+  padding:var(--s-2) var(--s-3);border-radius:var(--radio-pill);font-size:var(--t-md);
+  min-height:44px;display:inline-flex;align-items:center;gap:var(--s-1);font-family:inherit}
+.filtro[aria-pressed="true"]{background:var(--info-bg);color:var(--info-tx);border-color:var(--info-bd)}
+.filtro span{color:var(--texto)}
+.plegable{position:relative}
+.plegable summary{list-style:none;cursor:pointer}
+.plegable summary::-webkit-details-marker{display:none}
+.plegable-cuerpo{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-2)}
+@media (min-width:601px){
+  /* En escritorio no hay desplegable: las categorías van en la misma fila de filtros. */
+  .plegable{display:contents}
+  .plegable>summary{display:none}
+  .plegable[open] .plegable-cuerpo{display:contents;position:static;margin:0;background:none;
+    border:0;padding:0;box-shadow:none;min-width:0}
+}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:var(--s-4)}
+.tarjeta{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--borde);
+  border-radius:var(--radio);overflow:hidden}
+.tarjeta:hover{border-color:#3a5574}
+.cuerpo{padding:var(--s-4);display:flex;flex-direction:column;gap:var(--s-2);flex:1}
+h2 a:hover{text-decoration:underline}
+.acciones{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center}
+.abrir{display:inline-flex;align-items:center;min-height:44px;padding:var(--s-2) var(--s-3);
+  border-radius:var(--radio-sm);border:1px solid var(--ok-bd);background:var(--ok-bg);
+  color:var(--ok-tx);font-weight:650;transition:transform .15s ease}
+.abrir:hover{transform:translateY(-1px)}
+.abrir:active{transform:scale(.97)}
+.abrir.neutro{border-color:var(--info-bd);background:var(--info-bg);color:var(--info-tx)}
+.abrir.neutro:hover{transform:none}
+.abrir.secundario{border:0;background:none;color:var(--suave);padding:var(--s-1) 0;
+  min-height:44px;display:inline-flex;align-items:center;
+  font-weight:400;text-decoration:underline;transition:none}
+.abrir.secundario:hover{transform:none}
+.desc{color:var(--suave);margin:0}
+.nota{color:#ffd9a1;background:#3a2a1222;border:1px solid #5c431f;
+  border-radius:var(--radio-sm);font-size:var(--t-sm);padding:var(--s-2);margin:0}
+.pie{margin-top:auto;padding-top:var(--s-3);border-top:1px solid var(--borde)}
+.detalle{font-size:var(--t-sm);color:var(--suave)}
+.meta{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center}
+.sellos{justify-content:flex-start}
+.sello{display:inline-flex;align-items:center;gap:var(--s-1);font-size:var(--t-sm);
+  padding:var(--s-1) var(--s-2);border-radius:var(--radio-pill);border:1px solid;
+  white-space:nowrap}
+.sello-acceso{background:transparent;border-color:var(--borde);color:var(--suave)}
+.sello-salud{font-weight:650}
+.sello-salud::before{content:"";width:8px;height:8px;border-radius:50%;flex:none}
+.salud-en-pie{background:var(--ok-bg);border-color:var(--ok-bd);color:var(--ok-tx)}
+.salud-en-pie::before{background:var(--verde)}
+.salud-caido{background:var(--mal-bg);border-color:var(--mal-bd);color:var(--mal-tx)}
+.salud-caido::before{background:var(--rojo)}
+.salud-sin-datos,.salud-sin-comprobar{background:transparent;border-color:var(--neu-bd);color:var(--neu-tx)}
+.salud-sin-datos::before,.salud-sin-comprobar::before{background:transparent;border:2px solid currentColor}
+.cap{position:relative;aspect-ratio:16/9;background:var(--panel2);overflow:hidden}
+.cap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.sin-captura{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:var(--s-1);background:var(--panel2)}
+.sin-captura span{font-size:40px;font-weight:600;letter-spacing:-.04em;color:#ffffff1f}
+.sin-captura small{color:var(--suave);font-size:var(--t-sm)}
+.seccion{margin-top:var(--s-6)}
+.seccion>h2{margin-bottom:var(--s-3)}
+.volver{display:inline-flex;align-items:center;gap:var(--s-1);min-height:44px;
+  font-size:var(--t-sm);color:var(--suave);border:1px solid var(--borde);
+  border-radius:var(--radio-pill);padding:var(--s-2) var(--s-3);margin-bottom:var(--s-3)}
+.volver:hover{border-color:#3a5574;color:var(--texto)}
+.tabla{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--borde);
+  border-radius:var(--radio-sm);overflow:hidden}
+.tabla caption{caption-side:top;text-align:left;color:var(--suave);font-size:var(--t-sm);
+  padding:0 0 var(--s-2)}
+.tabla th,.tabla td{text-align:left;padding:var(--s-2) var(--s-3);border-bottom:1px solid var(--borde);
+  vertical-align:top;font-size:var(--t-sm)}
+.tabla thead th{color:var(--texto);font-weight:650;background:var(--panel2);white-space:nowrap}
+.tabla td{color:var(--suave)}
+.tabla tbody tr:last-child td{border-bottom:0}
+.fila-dato .servicio{color:var(--texto);font-weight:600}
+.cifras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3);margin:var(--s-4) 0 0}
+.cifra{background:var(--panel);border:1px solid var(--borde);border-radius:var(--radio-sm);
+  padding:var(--s-3)}
+.cifra b{display:block;font-size:var(--t-xl);line-height:var(--lh-tight)}
+.cifra span{display:block;font-size:var(--t-sm);color:var(--suave);margin-top:var(--s-1)}
+.aviso{border:1px solid var(--mal-bd);background:var(--mal-bg);color:var(--mal-tx);
+  border-radius:var(--radio-sm);padding:var(--s-3);margin:var(--s-4) 0 0}
+.vacio{color:var(--suave);border:1px dashed var(--borde);border-radius:var(--radio-sm);
+  padding:var(--s-3);margin:0}
+.leyenda{margin-top:var(--s-6)}
+.leyenda h3{font-size:var(--t-md);margin:var(--s-4) 0 var(--s-2)}
+.leyenda dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--s-3);margin:0}
+.leyenda dl>div{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:flex-start}
+.leyenda dt{display:flex;margin:0}
+.leyenda dd{margin:0;color:var(--suave);font-size:var(--t-sm);flex:1 1 100%}
+.solo-escritorio{display:inline-flex}
+.corto{display:none}
+footer{margin-top:var(--s-8);color:var(--suave);font-size:var(--t-sm);
+  border-top:1px solid var(--borde);padding-top:var(--s-3);display:flex;flex-wrap:wrap;
+  justify-content:space-between;gap:var(--s-2)}
+footer a{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:600px){
+  .envuelto{padding:var(--s-4) var(--s-4) var(--s-6)}
+  .cap{display:none}
+  .franja{gap:var(--s-1);width:100%;flex-wrap:wrap;overflow:visible}
+  .franja-dato{font-size:11px;padding:var(--s-1) var(--s-2)}
+  .solo-escritorio{display:none}
+  .corto{display:inline}
+  .largo{display:none}
+  .rejilla{gap:var(--s-3)}
+  .filtro{min-height:44px;font-size:var(--t-sm)}
+  .cifras{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tabla thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .tabla caption{display:block;width:auto;margin:0 0 var(--s-2);padding:0;text-align:left}
+  .tabla,.tabla tbody,.tabla tr,.tabla td{display:block;width:100%}
+  .tabla{border:0;background:none}
+  .tabla tr{border:1px solid var(--borde);border-radius:var(--radio-sm);background:var(--panel);
+    padding:var(--s-2) var(--s-3);margin-bottom:var(--s-2)}
+  .tabla td{border:0;padding:2px 0;display:flex;gap:var(--s-2);justify-content:space-between;
+    align-items:baseline}
+  .tabla td::before{content:attr(data-etiqueta);color:var(--suave);font-weight:600;flex:none}
+  h1{letter-spacing:-.01em}
+  .proposito{max-width:none}
+}
+.ritmo-rejilla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-4)}
+.ritmo-nota{color:var(--suave);font-size:var(--t-sm);margin:var(--s-2) 0 0}
+.cargando{color:var(--suave);margin:var(--s-4) 0}
+.datos{margin:0}
+.dato{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s-3);
+  padding:var(--s-2) 0;border-bottom:1px solid var(--borde);font-size:var(--t-md)}
+.dato:last-child{border-bottom:0}
+.dato dt{color:var(--suave);margin:0}
+.dato dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.dato dd.sin-datos{color:var(--suave);font-weight:400}
+@media (max-width:600px){
+  .ritmo-rejilla{grid-template-columns:1fr}
+  .dato{font-size:var(--t-sm)}
+}
+</style>
+</head>
+<body>
+<div class="envuelto">
+  <header class="cabecera">
+    <div>
+      <a class="volver" href="index.html">← Panel</a>
+      <h1>Ritmo de peticiones</h1>
+      <p class="proposito">Cuántas peticiones por minuto hacen el PC y el servidor, con latencia,
+        fallos y trabajos en cola. La ventana es de 5 minutos cerrada hace 1 minuto.</p>
+      <div class="franja">
+        <span class="franja-dato">Ventana de 5 min</span>
+        <a class="franja-enlace" href="estado.html">Estado de los servicios</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="seccion">
+    <h2>Ahora mismo</h2>
+    <p class="cargando" id="cargando">Cargando la última medición…</p>
+    <div class="aviso" id="aviso-estado" hidden></div>
+    <section id="datos" aria-label="Métricas de ritmo" hidden>
+      <div class="ritmo-rejilla" id="ritmo-rejilla"></div>
+      <p class="ritmo-nota" id="medido"></p>
+    </section>
+    <noscript>
+      <p class="aviso">Sin JavaScript no se puede leer la medición. El fichero
+        <code>ritmo.json</code> está publicado en esta misma carpeta.</p>
+    </noscript>
+    <section class="seccion" id="referencia-seccion" hidden>
+      <h2>Referencia medida</h2>
+      <p class="ritmo-nota" id="referencia"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Panel</a> · sin cookies ni analítica.</p>
+    <p>Fuente: FACyLF (metricas-facylf.json y colas del PC, solo lectura).</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var cargando = document.getElementById("cargando");
+  var datos = document.getElementById("datos");
+  var aviso = document.getElementById("aviso-estado");
+  var rejilla = document.getElementById("ritmo-rejilla");
+  var medido = document.getElementById("medido");
+  var refSeccion = document.getElementById("referencia-seccion");
+  var refTexto = document.getElementById("referencia");
+
+  function numero(n) {
+    return n === null || n === undefined ? "Sin datos" : Number(n).toLocaleString("es-ES");
+  }
+  function fila(etiqueta, valor) {
+    var d = document.createElement("div"); d.className = "dato";
+    var dt = document.createElement("dt"); dt.textContent = etiqueta;
+    var dd = document.createElement("dd");
+    if (valor === null || valor === undefined) { dd.textContent = "Sin datos"; dd.className = "sin-datos"; }
+    else { dd.textContent = String(valor); }
+    d.appendChild(dt); d.appendChild(dd); return d;
+  }
+  function filaTexto(etiqueta, texto, esSinDatos) {
+    var d = document.createElement("div"); d.className = "dato";
+    var dt = document.createElement("dt"); dt.textContent = etiqueta;
+    var dd = document.createElement("dd"); dd.textContent = texto;
+    if (esSinDatos) dd.className = "sin-datos";
+    d.appendChild(dt); d.appendChild(dd); return d;
+  }
+  function tarjeta(nombre, maquina) {
+    var t = document.createElement("article"); t.className = "tarjeta";
+    var cuerpo = document.createElement("div"); cuerpo.className = "cuerpo";
+    var h = document.createElement("h2"); h.textContent = nombre; cuerpo.appendChild(h);
+    var sello = document.createElement("span");
+    sello.className = "sello sello-salud " + (maquina.estado === "ok" ? "salud-en-pie" : "salud-sin-comprobar");
+    sello.textContent = maquina.estado === "ok" ? "Datos de ahora" : "Datos parciales";
+    cuerpo.appendChild(sello);
+    var dl = document.createElement("dl"); dl.className = "datos";
+    dl.appendChild(fila("Peticiones por minuto", maquina.por_min === null ? null : numero(maquina.por_min)));
+    dl.appendChild(fila("Peticiones por hora (estimado)", maquina.por_hora_estimado === null ? null : numero(maquina.por_hora_estimado)));
+    if (maquina.latencia_ms) {
+      dl.appendChild(filaTexto("Latencia mediana", numero(maquina.latencia_ms.mediana) + " ms", false));
+      dl.appendChild(filaTexto("Latencia p95", numero(maquina.latencia_ms.p95) + " ms", false));
+      dl.appendChild(filaTexto("Muestras de la ventana", numero(maquina.latencia_ms.muestras), false));
+    } else {
+      dl.appendChild(filaTexto("Latencia mediana", "Sin datos", true));
+    }
+    if (maquina.resultados) {
+      dl.appendChild(filaTexto("Peticiones ok", numero(maquina.resultados.ok), false));
+      dl.appendChild(filaTexto("Sin datos de origen", numero(maquina.resultados.sin_datos), false));
+      dl.appendChild(filaTexto("Fallos", numero(maquina.resultados.fallos), false));
+    }
+    if (maquina.en_cola) {
+      dl.appendChild(filaTexto("Trabajos en cola", numero(maquina.en_cola.trabajos) +
+        " (" + maquina.en_cola.colas_leidas + "/" + maquina.en_cola.colas_total + " colas)", false));
+    } else {
+      dl.appendChild(filaTexto("Trabajos en cola", "Sin datos", true));
+    }
+    if (maquina.motivo) dl.appendChild(filaTexto("Aviso", maquina.motivo, true));
+    cuerpo.appendChild(dl);
+    t.appendChild(cuerpo);
+    return t;
+  }
+
+  fetch("ritmo.json", { cache: "no-store" }).then(function (r) {
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return r.json();
+  }).then(function (s) {
+    cargando.hidden = true;
+    if (s.estado !== "ok") {
+      aviso.hidden = false;
+      var prefijo = s.estado === "caducado" ? "Medición caducada. " :
+        (s.estado === "sin-datos" ? "Sin datos. " : "Error al leer la fuente. ");
+      aviso.textContent = prefijo + (s.motivo || "");
+    }
+    rejilla.appendChild(tarjeta("PC", s.maquinas.pc));
+    rejilla.appendChild(tarjeta("Servidor", s.maquinas.servidor));
+    medido.textContent = "Ventana: " + s.ventana + " · medido: " + (s.medido_ritmo || "sin datos") +
+      " · panel actualizado: " + s.actualizado + " · fuente: " + s.fuente_ritmo;
+    if (s.referencia) {
+      refSeccion.hidden = false;
+      refTexto.textContent = "Medición documentada del " + s.referencia.fecha +
+        " (no es el dato de ahora): latencia mediana del PC " + s.referencia.pc_latencia_mediana_ms +
+        " ms y del servidor " + s.referencia.servidor_latencia_mediana_ms + " ms.";
+    }
+    datos.hidden = false;
+  }).catch(function () {
+    cargando.hidden = true;
+    aviso.hidden = false;
+    aviso.textContent = "No se pudo leer la medición (ritmo.json). Vuelve a intentarlo o consulta el estado.";
+  });
+})();
+</script>
+</body>
+</html>

@@ -165,6 +165,20 @@ footer a{text-decoration:underline}
   h1{letter-spacing:-.01em}
   .proposito{max-width:none}
 }
+.ritmo-rejilla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-4)}
+.ritmo-nota{color:var(--suave);font-size:var(--t-sm);margin:var(--s-2) 0 0}
+.cargando{color:var(--suave);margin:var(--s-4) 0}
+.datos{margin:0}
+.dato{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s-3);
+  padding:var(--s-2) 0;border-bottom:1px solid var(--borde);font-size:var(--t-md)}
+.dato:last-child{border-bottom:0}
+.dato dt{color:var(--suave);margin:0}
+.dato dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.dato dd.sin-datos{color:var(--suave);font-weight:400}
+@media (max-width:600px){
+  .ritmo-rejilla{grid-template-columns:1fr}
+  .dato{font-size:var(--t-sm)}
+}
 </style>
 </head>
 <body>
@@ -176,7 +190,7 @@ footer a{text-decoration:underline}
       <p class="proposito">Cuaderno de campo: demo pública; la versión con PostgreSQL queda privada.</p>
       <div class="meta sellos">
         <span class="sello sello-acceso acceso-publico">Demo pública</span>
-        <span class="sello sello-salud salud-en-pie">En pie · 10:59</span>
+        <span class="sello sello-salud salud-en-pie">En pie · 11:14</span>
         <span class="detalle">Producto · en curso</span>
       </div>
       
@@ -186,7 +200,7 @@ footer a{text-decoration:underline}
 
   <section class="seccion" aria-labelledby="servicios">
     <h2 id="servicios">Servicios comprobados</h2>
-    <table class="tabla"><caption>CueDigital: una fila por servicio, con su hora.</caption><thead><tr><th scope="col">Servicio</th><th scope="col">Estado</th><th scope="col">HTTP</th><th scope="col">Latencia</th><th scope="col">Última comprobación</th></tr></thead><tbody><tr class="fila-dato"><td data-etiqueta="Servicio"><span class="servicio">CueDigital</span></td><td data-etiqueta="Estado"><span class="sello sello-salud salud-en-pie">En pie</span></td><td data-etiqueta="HTTP">200</td><td data-etiqueta="Latencia">226 ms</td><td data-etiqueta="Última comprobación">14/11 10:59</td></tr></tbody></table>
+    <table class="tabla"><caption>CueDigital: una fila por servicio, con su hora.</caption><thead><tr><th scope="col">Servicio</th><th scope="col">Estado</th><th scope="col">HTTP</th><th scope="col">Latencia</th><th scope="col">Última comprobación</th></tr></thead><tbody><tr class="fila-dato"><td data-etiqueta="Servicio"><span class="servicio">CueDigital</span></td><td data-etiqueta="Estado"><span class="sello sello-salud salud-en-pie">En pie</span></td><td data-etiqueta="HTTP">200</td><td data-etiqueta="Latencia">312 ms</td><td data-etiqueta="Última comprobación">14/11 11:14</td></tr></tbody></table>
   </section>
 
   <section class="seccion" aria-labelledby="acciones">
