@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; connect-src 'self'; base-uri 'none'; form-action 'none'; script-src 'sha256-/K1oB52Nh0i3aSOInqpHxBUQYT9WrVrpS6k9Dj+tewQ=' 'sha256-y1oN/Ep10c4KpqlnonsMaUZSiSecTVAg5DGoEWo7z5k='">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; connect-src 'self'; base-uri 'none'; form-action 'none'; script-src 'sha256-/K1oB52Nh0i3aSOInqpHxBUQYT9WrVrpS6k9Dj+tewQ=' 'sha256-TRQcPoAeBjt3VgHUjbV7dYDJEy4PMEZZ3JbgJJJMpmE='">
 <meta name="referrer" content="no-referrer">
 <title>Ritmo de peticiones — Proyectos de David</title>
 <style>
@@ -271,8 +271,12 @@ footer a{text-decoration:underline}
       dl.appendChild(filaTexto("Fallos", numero(maquina.resultados.fallos), false));
     }
     if (maquina.en_cola) {
-      dl.appendChild(filaTexto("Trabajos en cola", numero(maquina.en_cola.trabajos) +
-        " (" + maquina.en_cola.colas_leidas + "/" + maquina.en_cola.colas_total + " colas)", false));
+      var colaTexto = numero(maquina.en_cola.trabajos) + " (" + maquina.en_cola.colas_leidas +
+        "/" + maquina.en_cola.colas_total + " colas";
+      if (maquina.en_cola.colas_parciales) {
+        colaTexto += ", " + maquina.en_cola.colas_parciales + " con cuenta parcial";
+      }
+      dl.appendChild(filaTexto("Trabajos en cola", colaTexto + ")", false));
     } else {
       dl.appendChild(filaTexto("Trabajos en cola", "Sin datos", true));
     }
